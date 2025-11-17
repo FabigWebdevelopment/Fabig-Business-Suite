@@ -600,7 +600,10 @@ export const Tenants: CollectionConfig = {
         },
         {
           name: 'metadata',
-          type: 'json',
+          type: 'textarea',
+          admin: {
+            description: 'JSON metadata (temporarily using textarea until Payload fixes code editor)',
+          },
         },
       ],
     },
