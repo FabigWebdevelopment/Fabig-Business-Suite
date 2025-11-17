@@ -1,6 +1,7 @@
-import { getPayload } from 'payload'
-import config from '@/payload/payload.config'
 import { NextResponse } from 'next/server'
+import { getPayload } from 'payload'
+
+import config from '@/payload/payload.config'
 
 /**
  * Database Initialization Endpoint
@@ -19,7 +20,7 @@ import { NextResponse } from 'next/server'
  * 4. Remove DATABASE_PUSH_ENABLED from Vercel
  * 5. Delete this file or add auth
  */
-export async function GET(request: Request) {
+export async function GET() {
   try {
     // Security check: Only allow in production if DATABASE_PUSH_ENABLED is true
     if (process.env.NODE_ENV === 'production' && process.env.DATABASE_PUSH_ENABLED !== 'true') {
