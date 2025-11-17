@@ -3,7 +3,7 @@ import { fileURLToPath } from 'url'
 
 import { postgresAdapter } from '@payloadcms/db-postgres'
 // import { multiTenantPlugin } from '@payloadcms/plugin-multi-tenant'
-import { seoPlugin } from '@payloadcms/plugin-seo'
+// import { seoPlugin } from '@payloadcms/plugin-seo'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { buildConfig } from 'payload'
 import sharp from 'sharp'
@@ -70,13 +70,13 @@ export default buildConfig({
     //   },
     // }),
 
-    // SEO plugin
-    seoPlugin({
-      collections: ['pages', 'posts'],
-      uploadsCollection: 'media',
-      generateTitle: ({ doc }) => `${doc?.title} | Fabig Business Suite`,
-      generateDescription: ({ doc }) => doc?.excerpt || doc?.description,
-    }),
+    // SEO plugin - Temporarily disabled until Pages collection is created (Week 2-3)
+    // seoPlugin({
+    //   collections: ['pages', 'posts'],
+    //   uploadsCollection: 'media',
+    //   generateTitle: ({ doc }) => `${doc?.title} | Fabig Business Suite`,
+    //   generateDescription: ({ doc }) => doc?.excerpt || doc?.description,
+    // }),
   ],
 
   // TypeScript
