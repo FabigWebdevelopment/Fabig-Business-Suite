@@ -288,6 +288,7 @@ See [DEV_TO_PROD_WORKFLOW.md](./DEV_TO_PROD_WORKFLOW.md) for detailed deployment
 
 ### Setup & Configuration
 - **[Setup Checklist](./SETUP_CHECKLIST.md)** - Complete step-by-step setup guide ⭐ START HERE
+- **[Vercel Deployment Guide](./VERCEL_DEPLOYMENT_GUIDE.md)** - Deploy to Vercel with environment variables 🚀
 - **[Environment Variables Guide](./ENVIRONMENT_SETUP.md)** - Comprehensive env setup (all services)
 - **[Quick Reference](./ENV_QUICK_REFERENCE.md)** - Copy-paste environment templates
 - **[Development Workflow](./DEV_TO_PROD_WORKFLOW.md)** - Git workflow and deployment
@@ -296,6 +297,7 @@ See [DEV_TO_PROD_WORKFLOW.md](./DEV_TO_PROD_WORKFLOW.md) for detailed deployment
 - **[Main Development Guide](./claude.md)** - Complete project documentation
 - **[Automated Provisioning](./AUTOMATED_PROVISIONING.md)** - Auto-setup architecture
 - **[WhatsApp AI Architecture](./WHATSAPP_AI_ARCHITECTURE.md)** - AI implementation guide
+- **[Stripe Integration Guide](./STRIPE_INTEGRATION.md)** - Payment & subscription system (Week 10)
 - **[GoHighLevel Research](./GOHIGHLEVEL_RESEARCH.md)** - Competitor analysis
 
 ## Quick Start (First Time Setup)

@@ -27,6 +27,14 @@ OPENAI_API_KEY=sk-your-personal-key
 STRIPE_SECRET_KEY=sk_test_YOUR_TEST_KEY
 STRIPE_WEBHOOK_SECRET=whsec_YOUR_WEBHOOK_SECRET
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_YOUR_PUBLISHABLE_KEY
+STRIPE_PRICE_BASIC_MONTHLY=price_test_basic_monthly
+STRIPE_PRICE_PROFESSIONAL_MONTHLY=price_test_professional_monthly
+STRIPE_PRICE_PREMIUM_MONTHLY=price_test_premium_monthly
+STRIPE_PRICE_ENTERPRISE_MONTHLY=price_test_enterprise_monthly
+
+# Upstash Redis (Week 10+ - for Stripe sync)
+UPSTASH_REDIS_REST_URL=https://your-db.upstash.io
+UPSTASH_REDIS_REST_TOKEN=your-token
 ```
 
 ---
@@ -62,6 +70,14 @@ OPENAI_API_KEY=sk-production-key
 STRIPE_SECRET_KEY=sk_live_YOUR_LIVE_SECRET_KEY
 STRIPE_WEBHOOK_SECRET=whsec_YOUR_LIVE_WEBHOOK_SECRET
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_live_YOUR_LIVE_PUBLISHABLE_KEY
+STRIPE_PRICE_BASIC_MONTHLY=price_live_basic_monthly
+STRIPE_PRICE_PROFESSIONAL_MONTHLY=price_live_professional_monthly
+STRIPE_PRICE_PREMIUM_MONTHLY=price_live_premium_monthly
+STRIPE_PRICE_ENTERPRISE_MONTHLY=price_live_enterprise_monthly
+
+# Upstash Redis (for Stripe sync)
+UPSTASH_REDIS_REST_URL=https://prod-db.upstash.io
+UPSTASH_REDIS_REST_TOKEN=prod-token
 
 # Background Jobs
 TRIGGER_API_KEY=tr_prod_xxxxxxxxxxxxxxxx
@@ -107,6 +123,14 @@ OPENAI_API_KEY=sk-production-key
 STRIPE_SECRET_KEY=sk_test_YOUR_TEST_SECRET_KEY
 STRIPE_WEBHOOK_SECRET=whsec_YOUR_TEST_WEBHOOK_SECRET
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_YOUR_TEST_PUBLISHABLE_KEY
+STRIPE_PRICE_BASIC_MONTHLY=price_test_basic_monthly
+STRIPE_PRICE_PROFESSIONAL_MONTHLY=price_test_professional_monthly
+STRIPE_PRICE_PREMIUM_MONTHLY=price_test_premium_monthly
+STRIPE_PRICE_ENTERPRISE_MONTHLY=price_test_enterprise_monthly
+
+# Upstash Redis (for Stripe sync)
+UPSTASH_REDIS_REST_URL=https://staging-db.upstash.io
+UPSTASH_REDIS_REST_TOKEN=staging-token
 
 # Background Jobs
 TRIGGER_API_KEY=tr_dev_xxxxxxxxxxxxxxxx
@@ -153,6 +177,9 @@ PAYLOAD_SECRET_TEST=<openssl rand -base64 32>
 | **STRIPE_SECRET_KEY** | Stripe Dashboard → Developers → API Keys | Week 10 |
 | **STRIPE_WEBHOOK_SECRET** | Stripe Dashboard → Webhooks → Endpoint → Signing Secret | Week 10 |
 | **NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY** | Stripe Dashboard → Developers → API Keys | Week 10 |
+| **STRIPE_PRICE_*_MONTHLY** | Stripe Dashboard → Products → Price ID | Week 10 |
+| **UPSTASH_REDIS_REST_URL** | Upstash Dashboard → Database → REST API → URL | Week 10 |
+| **UPSTASH_REDIS_REST_TOKEN** | Upstash Dashboard → Database → REST API → Token | Week 10 |
 | **TRIGGER_API_KEY** | Trigger.dev Dashboard → Project Settings → API Keys | Week 5 |
 | **TRIGGER_API_URL** | Usually: https://api.trigger.dev | Week 5 |
 | **SENTRY_DSN** | Sentry → Project → Settings → Client Keys | Week 11 |

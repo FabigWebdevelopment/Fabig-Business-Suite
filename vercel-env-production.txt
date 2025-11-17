@@ -1,0 +1,165 @@
+# Fabig Business Suite - Vercel Production Environment Variables
+# Copy these to: Vercel Dashboard → Project → Settings → Environment Variables → Production
+# Last Updated: January 2025
+
+# ============================================================================
+# WEEK 1 - CORE VARIABLES (REQUIRED IMMEDIATELY)
+# ============================================================================
+
+# Database (Neon - Production Branch)
+DATABASE_URI=postgresql://user:password@ep-xxxxx.eu-central-1.aws.neon.tech/fabig_suite_production?sslmode=require
+
+# Payload CMS Secret (Generate with: openssl rand -base64 32)
+PAYLOAD_SECRET=REPLACE_WITH_UNIQUE_PRODUCTION_SECRET_MIN_32_CHARS
+
+# Server URL (Your production domain)
+NEXT_PUBLIC_SERVER_URL=https://fabig-suite.de
+
+# Node Environment
+NODE_ENV=production
+
+
+# ============================================================================
+# WEEK 5 - EMAIL AUTOMATION (RESEND)
+# ============================================================================
+
+# Resend API Key (from https://resend.com/api-keys)
+RESEND_API_KEY=re_REPLACE_WITH_PRODUCTION_KEY
+
+# Sending Email Address
+EMAIL_FROM=noreply@fabig-suite.de
+
+
+# ============================================================================
+# WEEK 5 - BACKGROUND JOBS (TRIGGER.DEV)
+# ============================================================================
+
+# Trigger.dev API Key (from https://cloud.trigger.dev)
+TRIGGER_API_KEY=tr_prod_REPLACE_WITH_PRODUCTION_KEY
+
+# Trigger.dev API URL
+TRIGGER_API_URL=https://api.trigger.dev
+
+
+# ============================================================================
+# WEEK 7 - SMS & PHONE (TWILIO)
+# ============================================================================
+
+# Twilio Account SID (from https://console.twilio.com)
+TWILIO_ACCOUNT_SID=ACREPLACE_WITH_YOUR_ACCOUNT_SID
+
+# Twilio Auth Token
+TWILIO_AUTH_TOKEN=REPLACE_WITH_YOUR_AUTH_TOKEN
+
+# Twilio Phone Number (German number recommended: +49...)
+TWILIO_PHONE_NUMBER=+4915112345678
+
+
+# ============================================================================
+# WEEK 8 - WHATSAPP BUSINESS API
+# ============================================================================
+
+# Meta WhatsApp Access Token (from https://business.facebook.com)
+WHATSAPP_ACCESS_TOKEN=REPLACE_WITH_LONG_META_ACCESS_TOKEN
+
+# WhatsApp Phone Number ID
+WHATSAPP_PHONE_NUMBER_ID=123456789012345
+
+# WhatsApp Business Account ID
+WHATSAPP_BUSINESS_ACCOUNT_ID=123456789012345
+
+# WhatsApp Webhook Verify Token (Generate with: openssl rand -base64 32)
+WHATSAPP_WEBHOOK_VERIFY_TOKEN=REPLACE_WITH_UNIQUE_WEBHOOK_VERIFY_TOKEN
+
+
+# ============================================================================
+# WEEK 8 - OPENAI (GPT-4O-MINI FOR AI CONVERSATIONS)
+# ============================================================================
+
+# OpenAI API Key (from https://platform.openai.com/api-keys)
+OPENAI_API_KEY=sk-proj-REPLACE_WITH_PRODUCTION_OPENAI_KEY
+
+
+# ============================================================================
+# WEEK 10 - STRIPE PAYMENTS (LIVE MODE)
+# ============================================================================
+
+# Stripe Secret Key (LIVE MODE - from https://dashboard.stripe.com/apikeys)
+STRIPE_SECRET_KEY=sk_live_REPLACE_WITH_LIVE_SECRET_KEY
+
+# Stripe Webhook Secret (from Stripe Dashboard → Webhooks → Endpoint)
+STRIPE_WEBHOOK_SECRET=whsec_REPLACE_WITH_LIVE_WEBHOOK_SECRET
+
+# Stripe Publishable Key (LIVE MODE - safe to expose in frontend)
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_live_REPLACE_WITH_LIVE_PUBLISHABLE_KEY
+
+# Stripe Price IDs (LIVE MODE - from Stripe Dashboard → Products)
+STRIPE_PRICE_BASIC_MONTHLY=price_REPLACE_WITH_LIVE_BASIC_PRICE_ID
+STRIPE_PRICE_PROFESSIONAL_MONTHLY=price_REPLACE_WITH_LIVE_PROFESSIONAL_PRICE_ID
+STRIPE_PRICE_PREMIUM_MONTHLY=price_REPLACE_WITH_LIVE_PREMIUM_PRICE_ID
+STRIPE_PRICE_ENTERPRISE_MONTHLY=price_REPLACE_WITH_LIVE_ENTERPRISE_PRICE_ID
+
+# Upstash Redis (for Stripe subscription caching)
+UPSTASH_REDIS_REST_URL=https://REPLACE-WITH-PROD-DB.upstash.io
+UPSTASH_REDIS_REST_TOKEN=REPLACE_WITH_PRODUCTION_REDIS_TOKEN
+
+
+# ============================================================================
+# WEEK 11 - ERROR TRACKING (SENTRY)
+# ============================================================================
+
+# Sentry DSN (from https://sentry.io)
+SENTRY_DSN=https://REPLACE_WITH_SENTRY_DSN@sentry.io/REPLACE_PROJECT_ID
+
+# Sentry Auth Token (for source map uploads)
+SENTRY_AUTH_TOKEN=sntrys_REPLACE_WITH_SENTRY_AUTH_TOKEN
+
+# Sentry Organization
+SENTRY_ORG=fabig-webdevelopment
+
+# Sentry Project
+SENTRY_PROJECT=fabig-business-suite
+
+
+# ============================================================================
+# OPTIONAL - ANALYTICS & MONITORING
+# ============================================================================
+
+# Vercel Analytics (automatically enabled in Vercel)
+# No configuration needed
+
+# Vercel Speed Insights (automatically enabled in Vercel)
+# No configuration needed
+
+
+# ============================================================================
+# NOTES FOR PRODUCTION DEPLOYMENT
+# ============================================================================
+#
+# 1. NEVER use test/development keys in production
+# 2. Generate unique secrets for production (different from staging/local)
+# 3. Use LIVE Stripe keys (sk_live_*, pk_live_*)
+# 4. Set up Stripe webhook endpoint: https://fabig-suite.de/api/webhooks/stripe
+# 5. Configure allowed domains in payload.config.ts cors array
+# 6. Enable Vercel protection (DDoS, rate limiting) in dashboard
+# 7. Set up custom domain: fabig-suite.de, fabig-suite.com
+# 8. Enable automatic HTTPS (Vercel handles this)
+# 9. Configure DNS records at domain provider
+# 10. Test thoroughly on staging before deploying to production
+#
+# ============================================================================
+# SECURITY CHECKLIST
+# ============================================================================
+#
+# ✅ All secrets are unique (not reused from staging/local)
+# ✅ Database is production branch (fabig_suite_production)
+# ✅ Stripe is in LIVE mode
+# ✅ WhatsApp verify token is unique and secure
+# ✅ All API keys are from production accounts
+# ✅ Secrets stored in password manager
+# ✅ No secrets committed to git
+# ✅ Webhook endpoints use HTTPS
+# ✅ CORS configured for production domain only
+# ✅ Rate limiting enabled
+#
+# ============================================================================

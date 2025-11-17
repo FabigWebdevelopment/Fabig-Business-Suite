@@ -1,0 +1,182 @@
+# Fabig Business Suite - Vercel Preview/Staging Environment Variables
+# Copy these to: Vercel Dashboard → Project → Settings → Environment Variables → Preview
+# Last Updated: January 2025
+
+# ============================================================================
+# WEEK 1 - CORE VARIABLES (REQUIRED IMMEDIATELY)
+# ============================================================================
+
+# Database (Neon - Staging Branch)
+DATABASE_URI=postgresql://user:password@ep-xxxxx.eu-central-1.aws.neon.tech/fabig_suite_staging?sslmode=require
+
+# Payload CMS Secret (Generate with: openssl rand -base64 32)
+# IMPORTANT: Different from production secret!
+PAYLOAD_SECRET=REPLACE_WITH_UNIQUE_STAGING_SECRET_MIN_32_CHARS
+
+# Server URL (Staging subdomain)
+NEXT_PUBLIC_SERVER_URL=https://staging.fabig-suite.de
+
+# Node Environment (production mode but staging data)
+NODE_ENV=production
+
+
+# ============================================================================
+# WEEK 5 - EMAIL AUTOMATION (RESEND)
+# ============================================================================
+
+# Resend API Key (can use same production key or separate staging key)
+RESEND_API_KEY=re_REPLACE_WITH_PRODUCTION_OR_STAGING_KEY
+
+# Sending Email Address (use staging subdomain)
+EMAIL_FROM=staging@fabig-suite.de
+
+
+# ============================================================================
+# WEEK 5 - BACKGROUND JOBS (TRIGGER.DEV)
+# ============================================================================
+
+# Trigger.dev API Key (use development/staging key)
+TRIGGER_API_KEY=tr_dev_REPLACE_WITH_DEV_OR_STAGING_KEY
+
+# Trigger.dev API URL
+TRIGGER_API_URL=https://api.trigger.dev
+
+
+# ============================================================================
+# WEEK 7 - SMS & PHONE (TWILIO)
+# ============================================================================
+
+# Twilio Account SID (can use same production account)
+TWILIO_ACCOUNT_SID=ACREPLACE_WITH_YOUR_ACCOUNT_SID
+
+# Twilio Auth Token
+TWILIO_AUTH_TOKEN=REPLACE_WITH_YOUR_AUTH_TOKEN
+
+# Twilio Phone Number (same as production or dedicated staging number)
+TWILIO_PHONE_NUMBER=+4915112345678
+
+
+# ============================================================================
+# WEEK 8 - WHATSAPP BUSINESS API
+# ============================================================================
+
+# Meta WhatsApp Access Token (can use production or test account)
+WHATSAPP_ACCESS_TOKEN=REPLACE_WITH_META_ACCESS_TOKEN
+
+# WhatsApp Phone Number ID
+WHATSAPP_PHONE_NUMBER_ID=123456789012345
+
+# WhatsApp Business Account ID
+WHATSAPP_BUSINESS_ACCOUNT_ID=123456789012345
+
+# WhatsApp Webhook Verify Token (Generate with: openssl rand -base64 32)
+# IMPORTANT: Different from production token!
+WHATSAPP_WEBHOOK_VERIFY_TOKEN=REPLACE_WITH_UNIQUE_STAGING_WEBHOOK_TOKEN
+
+
+# ============================================================================
+# WEEK 8 - OPENAI (GPT-4O-MINI FOR AI CONVERSATIONS)
+# ============================================================================
+
+# OpenAI API Key (can use same production key)
+OPENAI_API_KEY=sk-proj-REPLACE_WITH_OPENAI_KEY
+
+
+# ============================================================================
+# WEEK 10 - STRIPE PAYMENTS (TEST MODE)
+# ============================================================================
+
+# Stripe Secret Key (TEST MODE - from https://dashboard.stripe.com/test/apikeys)
+# IMPORTANT: Use TEST mode keys for staging!
+STRIPE_SECRET_KEY=sk_test_REPLACE_WITH_TEST_SECRET_KEY
+
+# Stripe Webhook Secret (TEST MODE - separate endpoint for staging)
+STRIPE_WEBHOOK_SECRET=whsec_REPLACE_WITH_TEST_WEBHOOK_SECRET
+
+# Stripe Publishable Key (TEST MODE - safe to expose in frontend)
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_REPLACE_WITH_TEST_PUBLISHABLE_KEY
+
+# Stripe Price IDs (TEST MODE - from Stripe Dashboard → Test Mode → Products)
+STRIPE_PRICE_BASIC_MONTHLY=price_REPLACE_WITH_TEST_BASIC_PRICE_ID
+STRIPE_PRICE_PROFESSIONAL_MONTHLY=price_REPLACE_WITH_TEST_PROFESSIONAL_PRICE_ID
+STRIPE_PRICE_PREMIUM_MONTHLY=price_REPLACE_WITH_TEST_PREMIUM_PRICE_ID
+STRIPE_PRICE_ENTERPRISE_MONTHLY=price_REPLACE_WITH_TEST_ENTERPRISE_PRICE_ID
+
+# Upstash Redis (for Stripe subscription caching)
+# Can use same Redis instance as production with different key prefix
+UPSTASH_REDIS_REST_URL=https://REPLACE-WITH-STAGING-DB.upstash.io
+UPSTASH_REDIS_REST_TOKEN=REPLACE_WITH_STAGING_REDIS_TOKEN
+
+
+# ============================================================================
+# WEEK 11 - ERROR TRACKING (SENTRY) - OPTIONAL FOR STAGING
+# ============================================================================
+
+# Sentry DSN (optional - can use same as production or separate project)
+SENTRY_DSN=https://REPLACE_WITH_SENTRY_DSN@sentry.io/REPLACE_PROJECT_ID
+
+# Sentry Auth Token (for source map uploads)
+SENTRY_AUTH_TOKEN=sntrys_REPLACE_WITH_SENTRY_AUTH_TOKEN
+
+# Sentry Organization
+SENTRY_ORG=fabig-webdevelopment
+
+# Sentry Project (can be same or staging-specific)
+SENTRY_PROJECT=fabig-business-suite
+
+
+# ============================================================================
+# NOTES FOR STAGING DEPLOYMENT
+# ============================================================================
+#
+# 1. Always use Stripe TEST mode keys (never LIVE mode)
+# 2. Use staging database branch (fabig_suite_staging)
+# 3. Generate unique secrets (different from production)
+# 4. Staging URL: https://staging.fabig-suite.de
+# 5. Set up Stripe webhook: https://staging.fabig-suite.de/api/webhooks/stripe
+# 6. Can share some services with production (Resend, Twilio, OpenAI)
+# 7. WhatsApp verify token must be unique for staging webhook endpoint
+# 8. Test all integrations on staging before deploying to production
+# 9. Staging auto-deploys from 'develop' branch
+# 10. Production auto-deploys from 'main' branch
+#
+# ============================================================================
+# KEY DIFFERENCES FROM PRODUCTION
+# ============================================================================
+#
+# ✅ Database: fabig_suite_staging (not fabig_suite_production)
+# ✅ Stripe: TEST mode (sk_test_*, pk_test_*)
+# ✅ URL: staging.fabig-suite.de (not fabig-suite.de)
+# ✅ Secrets: Unique staging secrets
+# ✅ Email: staging@fabig-suite.de (not noreply@fabig-suite.de)
+# ✅ Trigger.dev: Development API key (tr_dev_*)
+# ✅ Purpose: Testing before production release
+#
+# ============================================================================
+# SHARED WITH PRODUCTION (CAN USE SAME KEYS)
+# ============================================================================
+#
+# ✅ Resend API Key (safe to share)
+# ✅ Twilio credentials (safe to share, same phone number)
+# ✅ OpenAI API Key (safe to share)
+# ✅ WhatsApp Access Token (safe to share, but unique verify token)
+# ✅ Sentry (optional - can use same project with environment tags)
+#
+# ============================================================================
+# TESTING CHECKLIST FOR STAGING
+# ============================================================================
+#
+# ✅ Database connection works
+# ✅ Can create super admin account
+# ✅ Can create test tenant
+# ✅ Email sending works (Resend)
+# ✅ SMS sending works (Twilio)
+# ✅ WhatsApp messages work
+# ✅ OpenAI conversations work
+# ✅ Stripe checkout works (TEST mode)
+# ✅ Stripe webhooks fire correctly
+# ✅ No errors in Vercel function logs
+# ✅ No errors in browser console
+# ✅ All features functional before promoting to production
+#
+# ============================================================================
