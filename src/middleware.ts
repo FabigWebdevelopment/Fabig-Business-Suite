@@ -48,7 +48,7 @@ export async function middleware(request: NextRequest) {
     if (isSubdomain) {
       // Extract tenant slug from subdomain
       const parts = hostname.split('.')
-      tenantSlug = parts[0]
+      tenantSlug = parts[0] ?? null
     } else {
       // This is a custom domain (e.g., www.kunde.de)
       // We'll need to look up the tenant by custom domain
