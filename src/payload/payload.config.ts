@@ -16,13 +16,14 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
+  // Secret key for JWT signing (required)
+  secret: process.env.PAYLOAD_SECRET || '',
+
   // Admin panel configuration
   admin: {
     user: Users.slug,
     meta: {
       titleSuffix: '- Fabig Business Suite',
-      favicon: '/logo-fabig.png',
-      ogImage: '/logo-fabig.png',
     },
     components: {},
   },
@@ -59,12 +60,15 @@ export default buildConfig({
   plugins: [
     // Multi-tenant plugin
     multiTenantPlugin({
-      // Tenants collection configuration
-      tenantCollection: 'tenants',
-      // Tenant field will be added to all collections except Users
-      tenantField: 'tenant',
-      // Allow specific collections to be accessed across tenants
-      allowedCollections: [],
+      // Tenants collection is defined in the collections array
+      tenantsSlug: 'tenants',
+      // Collections that should be tenant-scoped
+      collections: {
+        media: {
+          useTenantAccess: true,
+          useBaseFilter: true,
+        },
+      },
     }),
 
     // SEO plugin
@@ -99,12 +103,6 @@ export default buildConfig({
   // GraphQL
   graphQL: {
     schemaOutputFile: path.resolve(dirname, '../lib/types/generated-schema.graphql'),
-  },
-
-  // Rate limiting
-  rateLimit: {
-    max: 2000,
-    trustProxy: true,
   },
 
   // Upload configuration

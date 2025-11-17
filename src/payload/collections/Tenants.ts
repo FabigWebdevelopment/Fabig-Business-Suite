@@ -112,7 +112,7 @@ export const Tenants: CollectionConfig = {
           type: 'text',
           required: true,
           label: 'Telefonnummer',
-          validate: (value) => {
+          validate: (value: string | null | undefined) => {
             if (!value) return true
             // E.164 format validation for international numbers
             if (!value.match(/^\+[1-9]\d{1,14}$/)) {
@@ -128,7 +128,7 @@ export const Tenants: CollectionConfig = {
           name: 'domain',
           type: 'text',
           label: 'Eigene Domain (optional)',
-          validate: (value) => {
+          validate: (value: string | null | undefined) => {
             if (!value) return true
             // Domain validation
             if (!value.match(/^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$/)) {

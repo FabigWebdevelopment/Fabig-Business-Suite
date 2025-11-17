@@ -25,11 +25,13 @@ export const Users: CollectionConfig = {
     },
     // Forgot password
     forgotPassword: {
-      generateEmailHTML: ({ token, user }) => {
+      generateEmailHTML: (args?: { token?: string; user?: { firstName?: string } }) => {
+        const token = args?.token
+        const user = args?.user
         const url = `${process.env.NEXT_PUBLIC_SERVER_URL}/reset-password?token=${token}`
         return `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-            <h2>Hallo ${user.firstName || 'dort'},</h2>
+            <h2>Hallo ${user?.firstName || 'dort'},</h2>
             <p>Du hast eine Passwort-Zurücksetzung angefordert.</p>
             <a href="${url}" style="display: inline-block; padding: 12px 24px; background: #2563eb; color: white; text-decoration: none; border-radius: 6px;">
               Passwort zurücksetzen
