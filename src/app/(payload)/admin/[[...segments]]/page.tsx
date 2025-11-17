@@ -2,8 +2,8 @@
 import { RootPage, generatePageMetadata } from '@payloadcms/next/views'
 import type { Metadata } from 'next'
 
-import config from '@/payload/payload.config'
 import { importMap } from '@/payload/importMap'
+import config from '@/payload/payload.config'
 
 type Args = {
   params: Promise<{
