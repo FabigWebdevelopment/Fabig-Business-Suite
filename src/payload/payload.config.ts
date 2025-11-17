@@ -56,7 +56,11 @@ export default buildConfig({
             }
           : false,
     },
-    push: process.env.NODE_ENV === 'development',
+    // Auto-push schema changes:
+    // - Development: Always enabled
+    // - Production: Only if DATABASE_PUSH_ENABLED=true (for initial deployment)
+    // After initial deployment, remove DATABASE_PUSH_ENABLED and use migrations
+    push: process.env.DATABASE_PUSH_ENABLED === 'true' || process.env.NODE_ENV === 'development',
   }),
 
   // Sharp for image processing
