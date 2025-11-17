@@ -1,14 +1,63 @@
 # Production Database Setup Guide
 
-## Status: Ready to Apply
+## Status: Using Auto-Push (Phase 0)
 
 **Created:** November 17, 2025
-**Schema File:** `schema-export.sql` (31KB)
+**Updated:** November 17, 2025
 **Database:** Neon PostgreSQL
+**Strategy:** Auto-push with DATABASE_PUSH_ENABLED=true
 
 ---
 
-## 🎯 What This Does
+## 📝 Migration Strategy (Official Payload Workflow)
+
+We're following **Payload's recommended workflow** for Postgres migrations:
+
+### **Local Development (Push Mode)**
+```bash
+# Schema auto-updates via Drizzle push mode
+pnpm dev
+# Make changes to collections → Database updates automatically ✅
+```
+
+**Key:** DON'T run migrations against local dev database when using push mode!
+
+### **Before Deploying**
+```bash
+# 1. Complete your feature/changes locally (push mode handled it)
+
+# 2. Generate migration for production
+pnpm migrate:create
+
+# 3. Review the generated SQL in /migrations
+# 4. Commit to git
+git add migrations/
+git commit -m "feat: add new schema changes"
+
+# 5. Push to staging/production
+git push origin staging
+```
+
+### **Production (CI/Build)**
+```bash
+# Vercel/CI runs this automatically:
+payload migrate && next build
+
+# This:
+# 1. Runs pending migrations against production DB
+# 2. Builds Next.js app
+# 3. Deploys ✅
+```
+
+### **Why This Workflow?**
+- ✅ **Fast local dev:** Schema auto-syncs via push mode
+- ✅ **Safe production:** Migrations track and version schema changes
+- ✅ **Official best practice:** Recommended by Payload for Postgres
+- ✅ **Don't mix approaches:** Push for dev, migrations for prod
+
+---
+
+## 🎯 What This Does (Auto-Push Mode)
 
 This SQL file creates the complete database schema for Fabig Business Suite:
 

@@ -56,11 +56,18 @@ export default buildConfig({
             }
           : false,
     },
-    // Auto-push schema changes:
-    // - Development: Always enabled
-    // - Production: Only if DATABASE_PUSH_ENABLED=true (for initial deployment)
-    // After initial deployment, remove DATABASE_PUSH_ENABLED and use migrations
-    push: process.env.DATABASE_PUSH_ENABLED === 'true' || process.env.NODE_ENV === 'development',
+    // Push mode (Payload best practice):
+    // - Development: Enabled (auto-syncs schema changes via Drizzle)
+    // - Production: Disabled (uses migrations instead)
+    //
+    // Workflow:
+    // 1. Work locally with push: true (schema auto-updates)
+    // 2. When ready: `pnpm migrate:create` (generates migration)
+    // 3. Commit migration to git
+    // 4. Deploy: `payload migrate && next build` runs in CI
+    //
+    // WARNING: Don't run migrations against local dev database when using push!
+    push: process.env.NODE_ENV === 'development',
   }),
 
   // Sharp for image processing
