@@ -656,7 +656,7 @@ export const Tenants: CollectionConfig = {
           tenant.contactInfo?.domain !== previous.contactInfo?.domain
 
         if (domainChanged && tenant.contactInfo?.domain) {
-          console.log(
+          console.warn(
             `[Provisioning] Domain changed for tenant ${tenant.id}: ${tenant.contactInfo.domain}`
           )
 
@@ -671,7 +671,7 @@ export const Tenants: CollectionConfig = {
 
           // TODO: Enqueue background job for email domain setup
           // This will be implemented with Trigger.dev in next step
-          console.log(
+          console.warn(
             `[Provisioning] Email domain provisioning queued for ${tenant.contactInfo.domain}`
           )
         }
@@ -683,7 +683,7 @@ export const Tenants: CollectionConfig = {
           tenant.contactInfo?.phone !== previous.contactInfo?.phone
 
         if (phoneChanged && tenant.contactInfo?.phone && tenant.features?.smsEnabled) {
-          console.log(
+          console.warn(
             `[Provisioning] Phone number changed for tenant ${tenant.id}: ${tenant.contactInfo.phone}`
           )
 
@@ -696,7 +696,7 @@ export const Tenants: CollectionConfig = {
           })
 
           // TODO: Enqueue background job for phone number setup
-          console.log(
+          console.warn(
             `[Provisioning] Phone number provisioning queued for ${tenant.contactInfo.phone}`
           )
         }
@@ -708,7 +708,7 @@ export const Tenants: CollectionConfig = {
           tenant.features?.whatsappEnabled && !previous.features?.whatsappEnabled
 
         if (whatsappEnabled) {
-          console.log(`[Provisioning] WhatsApp enabled for tenant ${tenant.id}`)
+          console.warn(`[Provisioning] WhatsApp enabled for tenant ${tenant.id}`)
 
           await req.payload.update({
             collection: 'tenants',
@@ -719,7 +719,7 @@ export const Tenants: CollectionConfig = {
           })
 
           // TODO: Enqueue background job for WhatsApp Business setup
-          console.log(`[Provisioning] WhatsApp Business provisioning queued`)
+          console.warn(`[Provisioning] WhatsApp Business provisioning queued`)
         }
 
         return doc

@@ -18,7 +18,6 @@ export async function middleware(request: NextRequest) {
   // ============================================================================
   // Admin panel is always accessed via main domain
   const isAdminPath = url.pathname.startsWith('/admin')
-  const isApiPath = url.pathname.startsWith('/api')
   const isPayloadPath = url.pathname.startsWith('/_payload')
 
   if (isAdminPath || isPayloadPath) {
