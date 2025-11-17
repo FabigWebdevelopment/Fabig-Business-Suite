@@ -1,6 +1,6 @@
+import { ArrowRight, Zap, MessageSquare, Users, Globe, BarChart3, Shield } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Zap, MessageSquare, Users, Globe, BarChart3, Shield } from 'lucide-react'
 
 export default function HomePage() {
   return (
