@@ -69,3 +69,4 @@ docker/data/
 # Temporary files
 tmp/
 temp/
+src/app/(payload)/admin/importMap.js
