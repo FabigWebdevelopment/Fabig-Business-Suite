@@ -561,7 +561,7 @@ export const Tenants: CollectionConfig = {
       label: 'Provisioning Logs',
       admin: {
         readOnly: true,
-        condition: ({ req: { user } }) => user?.role === 'super-admin',
+        condition: ({ req }) => req?.user?.role === 'super-admin',
       },
       fields: [
         {
@@ -613,7 +613,7 @@ export const Tenants: CollectionConfig = {
       type: 'group',
       label: 'Metadaten',
       admin: {
-        condition: ({ req: { user } }) => user?.role === 'super-admin',
+        condition: ({ req }) => req?.user?.role === 'super-admin',
       },
       fields: [
         {

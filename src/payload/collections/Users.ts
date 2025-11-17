@@ -107,7 +107,8 @@ export const Users: CollectionConfig = {
       required: true,
       hasMany: false,
       admin: {
-        condition: ({ req: { user } }) => user?.role === 'super-admin',
+        // Temporarily disabled - causing issues on create-first-user page
+        // condition: ({ req }) => req?.user?.role === 'super-admin',
         description: 'Die Firma, zu der dieser Benutzer gehört',
       },
     },
