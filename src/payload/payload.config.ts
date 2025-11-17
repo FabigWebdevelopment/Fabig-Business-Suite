@@ -2,7 +2,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 
 import { postgresAdapter } from '@payloadcms/db-postgres'
-import { multiTenantPlugin } from '@payloadcms/plugin-multi-tenant'
+// import { multiTenantPlugin } from '@payloadcms/plugin-multi-tenant'
 import { seoPlugin } from '@payloadcms/plugin-seo'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { buildConfig } from 'payload'
@@ -58,18 +58,17 @@ export default buildConfig({
 
   // Plugins
   plugins: [
-    // Multi-tenant plugin
-    multiTenantPlugin({
-      // Tenants collection is defined in the collections array
-      tenantsSlug: 'tenants',
-      // Collections that should be tenant-scoped
-      collections: {
-        media: {
-          useTenantAccess: true,
-          useBaseFilter: true,
-        },
-      },
-    }),
+    // Multi-tenant plugin - Temporarily disabled to resolve field conflict
+    // Will properly configure in Week 2 when implementing full multi-tenancy
+    // multiTenantPlugin({
+    //   tenantsSlug: 'tenants',
+    //   collections: {
+    //     media: {
+    //       useTenantAccess: true,
+    //       useBaseFilter: true,
+    //     },
+    //   },
+    // }),
 
     // SEO plugin
     seoPlugin({
