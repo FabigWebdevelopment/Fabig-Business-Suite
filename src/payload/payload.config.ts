@@ -1,0 +1,116 @@
+import { postgresAdapter } from '@payloadcms/db-postgres'
+import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { buildConfig } from 'payload'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import sharp from 'sharp'
+import { multiTenantPlugin } from '@payloadcms/plugin-multi-tenant'
+import { seoPlugin } from '@payloadcms/plugin-seo'
+
+// Collections (will be created next)
+import { Tenants } from './collections/Tenants'
+import { Users } from './collections/Users'
+import { Media } from './collections/Media'
+
+const filename = fileURLToPath(import.meta.url)
+const dirname = path.dirname(filename)
+
+export default buildConfig({
+  // Admin panel configuration
+  admin: {
+    user: Users.slug,
+    meta: {
+      titleSuffix: '- Fabig Business Suite',
+      favicon: '/logo-fabig.png',
+      ogImage: '/logo-fabig.png',
+    },
+    components: {},
+  },
+
+  // Collections
+  collections: [
+    Tenants,
+    Users,
+    Media,
+    // Additional collections will be added here:
+    // Leads, Pages, Posts, Services, Bookings, etc.
+  ],
+
+  // Global settings
+  globals: [
+    // Global settings will be added here
+  ],
+
+  // Editor
+  editor: lexicalEditor({}),
+
+  // Database
+  db: postgresAdapter({
+    pool: {
+      connectionString: process.env.DATABASE_URI || '',
+    },
+    push: process.env.NODE_ENV === 'development',
+  }),
+
+  // Sharp for image processing
+  sharp,
+
+  // Plugins
+  plugins: [
+    // Multi-tenant plugin
+    multiTenantPlugin({
+      // Tenants collection configuration
+      tenantCollection: 'tenants',
+      // Tenant field will be added to all collections except Users
+      tenantField: 'tenant',
+      // Allow specific collections to be accessed across tenants
+      allowedCollections: [],
+    }),
+
+    // SEO plugin
+    seoPlugin({
+      collections: ['pages', 'posts'],
+      uploadsCollection: 'media',
+      generateTitle: ({ doc }) => `${doc?.title} | Fabig Business Suite`,
+      generateDescription: ({ doc }) => doc?.excerpt || doc?.description,
+    }),
+  ],
+
+  // TypeScript
+  typescript: {
+    outputFile: path.resolve(dirname, '../lib/types/payload-types.ts'),
+  },
+
+  // CORS
+  cors: [
+    process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000',
+    // Add custom domains here
+  ].filter(Boolean),
+
+  // CSRF
+  csrf: [
+    process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000',
+    // Add custom domains here
+  ].filter(Boolean),
+
+  // Server URL
+  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000',
+
+  // GraphQL
+  graphQL: {
+    schemaOutputFile: path.resolve(dirname, '../lib/types/generated-schema.graphql'),
+  },
+
+  // Rate limiting
+  rateLimit: {
+    max: 2000,
+    trustProxy: true,
+  },
+
+  // Upload configuration
+  upload: {
+    limits: {
+      fileSize: 10000000, // 10MB
+    },
+  },
+})
