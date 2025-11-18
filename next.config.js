@@ -71,10 +71,20 @@ const nextConfig = {
   },
 
   // Webpack configuration
-  webpack: (config) => {
+  webpack: (config, { isServer }) => {
     config.resolve.extensionAlias = {
       '.js': ['.js', '.ts', '.tsx'],
     }
+
+    // Disable Monaco editor to fix CodeEditor crashes
+    // This is a temporary workaround for Payload 3.x Monaco bug
+    if (!isServer) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'monaco-editor': false,
+      }
+    }
+
     return config
   },
 
