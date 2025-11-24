@@ -1,13 +1,18 @@
-import { Button } from '@/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { getClientConfig } from '@/config/clients'
+import { AnimatedButton } from '@/components/ui/animated-button'
+import {
+  AnimatedCard,
+  AnimatedCardContent,
+  AnimatedCardDescription,
+  AnimatedCardHeader,
+  AnimatedCardTitle,
+} from '@/components/ui/animated-card'
+import { AnimatedDiv } from '@/components/animations/AnimatedDiv'
+import {
+  StaggerContainer,
+  StaggerItem,
+} from '@/components/animations/StaggerContainer'
 
 export default function Home() {
   // For now, default to demo-barber
@@ -21,130 +26,220 @@ export default function Home() {
   return (
     <ThemeProvider config={config}>
       <div className="min-h-screen bg-background">
-        {/* Header */}
-        <header className="border-b border-border bg-card">
-          <div className="container mx-auto px-4 py-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <h1 className="text-2xl font-bold text-foreground">
-                  {config.branding.companyName}
-                </h1>
-                {config.branding.tagline && (
-                  <p className="text-sm text-muted-foreground">
-                    {config.branding.tagline}
-                  </p>
-                )}
+        {/* Header - Slide down animation */}
+        <AnimatedDiv animation="slideDown" className="sticky top-0 z-50">
+          <header className="border-b border-border bg-card/80 backdrop-blur-lg">
+            <div className="container mx-auto px-4 py-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h1 className="text-2xl font-bold text-foreground">
+                    {config.branding.companyName}
+                  </h1>
+                  {config.branding.tagline && (
+                    <p className="text-sm text-muted-foreground">
+                      {config.branding.tagline}
+                    </p>
+                  )}
+                </div>
+                <AnimatedButton magnetic hoverEffect="scale">
+                  Termin buchen
+                </AnimatedButton>
               </div>
-              <Button>Termin buchen</Button>
             </div>
-          </div>
-        </header>
+          </header>
+        </AnimatedDiv>
 
-        {/* Hero Section */}
-        <section className="container mx-auto px-4 py-16">
+        {/* Hero Section - Staggered animations */}
+        <section className="container mx-auto px-4 py-24">
           <div className="max-w-4xl">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
-              Willkommen bei {config.branding.companyName}
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              {config.seo.description}
-            </p>
-            <div className="flex gap-4">
-              <Button size="lg">Jetzt buchen</Button>
-              <Button variant="outline" size="lg">
-                Mehr erfahren
-              </Button>
-            </div>
-          </div>
-        </section>
+            <AnimatedDiv animation="slideUp" delay={0.1}>
+              <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+                Willkommen bei {config.branding.companyName}
+              </h2>
+            </AnimatedDiv>
 
-        {/* Features Grid */}
-        <section className="container mx-auto px-4 py-16">
-          <h3 className="text-2xl font-bold text-foreground mb-8">
-            Unsere Services
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Online Buchung</CardTitle>
-                <CardDescription>
-                  Buche deinen Termin rund um die Uhr online
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Einfach, schnell und bequem - wähle deinen Wunschtermin aus
-                  unserem Kalender.
-                </p>
-              </CardContent>
-            </Card>
+            <AnimatedDiv animation="slideUp" delay={0.2}>
+              <p className="text-xl text-muted-foreground mb-10 max-w-2xl">
+                {config.seo.description}
+              </p>
+            </AnimatedDiv>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>WhatsApp Service</CardTitle>
-                <CardDescription>
-                  Schreib uns direkt per WhatsApp
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Schnelle Antworten auf deine Fragen - 24/7 verfügbar.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Erfahrene Profis</CardTitle>
-                <CardDescription>
-                  Meisterbetrieb mit jahrelanger Erfahrung
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Unser Team sorgt dafür, dass du dich wohlfühlst.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section className="bg-muted py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-2xl">
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                Kontakt
-              </h3>
-              <div className="space-y-2 text-muted-foreground">
-                <p>
-                  <strong>Telefon:</strong> {config.contact.phone}
-                </p>
-                {config.contact.whatsapp && (
-                  <p>
-                    <strong>WhatsApp:</strong> {config.contact.whatsapp}
-                  </p>
-                )}
-                <p>
-                  <strong>Email:</strong> {config.contact.email}
-                </p>
-                <p>
-                  <strong>Adresse:</strong> {config.contact.address.street},{' '}
-                  {config.contact.address.zip} {config.contact.address.city}
-                </p>
+            <AnimatedDiv animation="slideUp" delay={0.3}>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <AnimatedButton
+                  size="lg"
+                  magnetic
+                  hoverEffect="scale"
+                  className="text-lg px-8"
+                >
+                  Jetzt buchen
+                </AnimatedButton>
+                <AnimatedButton
+                  variant="outline"
+                  size="lg"
+                  hoverEffect="lift"
+                  className="text-lg px-8"
+                >
+                  Mehr erfahren
+                </AnimatedButton>
               </div>
-            </div>
+            </AnimatedDiv>
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="border-t border-border py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>
-              © 2025 {config.branding.companyName}. Alle Rechte vorbehalten.
-            </p>
+        {/* Features Grid - Stagger container */}
+        <section className="container mx-auto px-4 py-24 bg-muted/30">
+          <AnimatedDiv animation="slideUp">
+            <h3 className="text-3xl font-bold text-foreground mb-12 text-center">
+              Unsere Services
+            </h3>
+          </AnimatedDiv>
+
+          <StaggerContainer
+            staggerDelay={0.1}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          >
+            <StaggerItem>
+              <AnimatedCard className="h-full">
+                <AnimatedCardHeader>
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                    <span className="text-2xl">📅</span>
+                  </div>
+                  <AnimatedCardTitle className="text-xl">
+                    Online Buchung
+                  </AnimatedCardTitle>
+                  <AnimatedCardDescription>
+                    Buche deinen Termin rund um die Uhr online
+                  </AnimatedCardDescription>
+                </AnimatedCardHeader>
+                <AnimatedCardContent>
+                  <p className="text-sm text-muted-foreground">
+                    Einfach, schnell und bequem - wähle deinen Wunschtermin aus
+                    unserem Kalender.
+                  </p>
+                </AnimatedCardContent>
+              </AnimatedCard>
+            </StaggerItem>
+
+            <StaggerItem>
+              <AnimatedCard className="h-full">
+                <AnimatedCardHeader>
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                    <span className="text-2xl">💬</span>
+                  </div>
+                  <AnimatedCardTitle className="text-xl">
+                    WhatsApp Service
+                  </AnimatedCardTitle>
+                  <AnimatedCardDescription>
+                    Schreib uns direkt per WhatsApp
+                  </AnimatedCardDescription>
+                </AnimatedCardHeader>
+                <AnimatedCardContent>
+                  <p className="text-sm text-muted-foreground">
+                    Schnelle Antworten auf deine Fragen - 24/7 verfügbar.
+                  </p>
+                </AnimatedCardContent>
+              </AnimatedCard>
+            </StaggerItem>
+
+            <StaggerItem>
+              <AnimatedCard className="h-full">
+                <AnimatedCardHeader>
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                    <span className="text-2xl">⭐</span>
+                  </div>
+                  <AnimatedCardTitle className="text-xl">
+                    Erfahrene Profis
+                  </AnimatedCardTitle>
+                  <AnimatedCardDescription>
+                    Meisterbetrieb mit jahrelanger Erfahrung
+                  </AnimatedCardDescription>
+                </AnimatedCardHeader>
+                <AnimatedCardContent>
+                  <p className="text-sm text-muted-foreground">
+                    Unser Team sorgt dafür, dass du dich wohlfühlst.
+                  </p>
+                </AnimatedCardContent>
+              </AnimatedCard>
+            </StaggerItem>
+          </StaggerContainer>
+        </section>
+
+        {/* Contact Section - Fade in from bottom */}
+        <section className="py-24">
+          <div className="container mx-auto px-4">
+            <AnimatedDiv animation="scaleUp" className="max-w-2xl mx-auto">
+              <div className="bg-card border border-border rounded-2xl p-8 md:p-12">
+                <h3 className="text-3xl font-bold text-foreground mb-8">
+                  Kontakt
+                </h3>
+                <div className="space-y-4 text-muted-foreground">
+                  <div className="flex items-start gap-3">
+                    <span className="text-primary mt-1">📞</span>
+                    <div>
+                      <p className="font-semibold text-foreground">Telefon</p>
+                      <p>{config.contact.phone}</p>
+                    </div>
+                  </div>
+
+                  {config.contact.whatsapp && (
+                    <div className="flex items-start gap-3">
+                      <span className="text-primary mt-1">💬</span>
+                      <div>
+                        <p className="font-semibold text-foreground">
+                          WhatsApp
+                        </p>
+                        <p>{config.contact.whatsapp}</p>
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="flex items-start gap-3">
+                    <span className="text-primary mt-1">✉️</span>
+                    <div>
+                      <p className="font-semibold text-foreground">Email</p>
+                      <p>{config.contact.email}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <span className="text-primary mt-1">📍</span>
+                    <div>
+                      <p className="font-semibold text-foreground">Adresse</p>
+                      <p>
+                        {config.contact.address.street}
+                        <br />
+                        {config.contact.address.zip} {config.contact.address.city}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                  <AnimatedButton
+                    className="w-full"
+                    size="lg"
+                    magnetic
+                    hoverEffect="glow"
+                  >
+                    Jetzt Kontakt aufnehmen
+                  </AnimatedButton>
+                </div>
+              </div>
+            </AnimatedDiv>
           </div>
-        </footer>
+        </section>
+
+        {/* Footer - Fade in */}
+        <AnimatedDiv animation="fade">
+          <footer className="border-t border-border py-12 bg-muted/30">
+            <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
+              <p>
+                © 2025 {config.branding.companyName}. Alle Rechte vorbehalten.
+              </p>
+            </div>
+          </footer>
+        </AnimatedDiv>
       </div>
     </ThemeProvider>
   )
