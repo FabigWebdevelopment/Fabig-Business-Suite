@@ -156,15 +156,22 @@ TWILIO_SMS_NUMBER=+4930123456789
 **What's Included:**
 - ✅ 5-page landing page
 - ✅ Twenty CRM (unlimited leads)
-- ✅ **WhatsApp AI** (300 conversations/mo)
+- ✅ **WhatsApp Basic** (unlimited messages, basic auto-replies)
 - ✅ Email automation (2 sequences)
 - ✅ SMS (50/mo)
 - ✅ Local SEO (5 directories)
 - ✅ 1 content update/month
 - ⏱️ Email support (48h response)
 
+**WhatsApp Features:**
+- ✅ Unlimited incoming messages
+- ✅ Basic auto-reply ("Danke für deine Nachricht, wir melden uns in Kürze")
+- ⚠️ NO AI conversations (manual replies only)
+- ⚠️ NO appointment booking
+- ⚠️ NO smart routing
+
 **Limitations that push upgrades:**
-- ⚠️ Only 300 WhatsApp conversations (runs out mid-month for active businesses)
+- ⚠️ Manual WhatsApp replies (time-consuming for busy businesses)
 - ⚠️ Only 1 content update (need to wait 30 days for changes)
 - ⚠️ Basic email sequences (no advanced nurturing)
 
@@ -175,7 +182,11 @@ TWILIO_SMS_NUMBER=+4930123456789
 
 **Everything in Starter, PLUS:**
 - ✅ **10-page landing page** (vs 5)
-- ✅ **WhatsApp AI: 1,000 conversations/mo** (+700 vs Starter) 🔥
+- ✅ **WhatsApp AI** (unlimited, with GPT-4) 🔥
+  - AI answers FAQs automatically
+  - Business hours auto-responder
+  - Lead qualification ("What service do you need?")
+  - Handoff to human when needed
 - ✅ **Email automation: 6 sequences** (vs 2)
 - ✅ **SMS: 200/mo** (vs 50)
 - ✅ **Local SEO: 12 directories** (vs 5)
@@ -183,11 +194,11 @@ TWILIO_SMS_NUMBER=+4930123456789
 - ✅ **Chat support** (24h response vs email only)
 
 **The Anchor:**
-- Only €150 more than Starter, but 3x WhatsApp capacity
-- "For just €5/day extra, never run out of AI conversations"
+- Only €150 more than Starter, but get AI handling WhatsApp 24/7
+- "Stop wasting time on WhatsApp. AI handles 80% of inquiries for just €5/day more"
 
 **Psychological Trigger:**
-> "Starter clients upgrade to Professional within 2 months when they hit conversation limits. Why not start here?"
+> "Starter clients manually reply to 30+ WhatsApp messages/day. At €449, AI saves 2-3 hours daily. That's worth €5/day."
 
 ---
 
@@ -196,7 +207,12 @@ TWILIO_SMS_NUMBER=+4930123456789
 
 **Everything in Professional, PLUS:**
 - ✅ **Unlimited landing pages**
-- ✅ **WhatsApp AI: 3,000 conversations/mo** (+2,000 vs Professional) 🔥
+- ✅ **WhatsApp AI Pro** (everything Professional has, PLUS:)
+  - **Smart appointment booking** (checks calendar, books automatically)
+  - **Quote generation** (AI calculates estimates based on service type)
+  - **Multi-language support** (German, English, Turkish)
+  - **Sentiment analysis** (flags angry customers for priority)
+  - **Voice message transcription** (AI converts voice → text → response)
 - ✅ **Email automation: Unlimited sequences**
 - ✅ **SMS: 500/mo**
 - ✅ **Local SEO: 20+ directories + Google My Business optimization**
@@ -205,11 +221,11 @@ TWILIO_SMS_NUMBER=+4930123456789
 - ✅ **Monthly SEO reports**
 
 **The Anchor:**
-- Only €300 more than Professional, but 3x WhatsApp capacity again
-- "Professional is great until you get 30+ customer inquiries/day"
+- Only €300 more than Professional, but WhatsApp AI books appointments automatically
+- "Professional handles FAQs. Premium closes deals while you sleep."
 
 **Psychological Trigger:**
-> "Once you're at €449/mo, €749 feels like the 'serious business' tier. And you get SEO reports to justify the ROI."
+> "Once you're at €449/mo, €749 gets you AI that BOOKS customers, not just chats. That's game-changing."
 
 ---
 
@@ -234,23 +250,23 @@ TWILIO_SMS_NUMBER=+4930123456789
 
 ### 📊 Psychological Pricing Breakdown (Like Apple)
 
-| What You Pay | What You Get | Hidden Anchor |
-|--------------|--------------|---------------|
-| **€299** | 300 WhatsApp conv | "Runs out → upgrade mid-month" |
-| **€449** (+€150) | 1,000 WhatsApp conv | "3x more for just €5/day" ⭐ |
-| **€749** (+€300) | 3,000 WhatsApp conv | "2x price = 3x capacity" |
-| **€1,499** (+€750) | **Unlimited** | "Remove anxiety, scale freely" 💎 |
+| What You Pay | WhatsApp Feature | Hidden Anchor |
+|--------------|------------------|---------------|
+| **€299** | Unlimited messages, manual replies | "Wastes 2-3 hours/day on WhatsApp" |
+| **€449** (+€150) | **AI automation** (GPT-4, 24/7) | "AI saves 2-3 hours/day = €5/day for freedom" ⭐ |
+| **€749** (+€300) | **AI + Booking** (closes deals automatically) | "AI that BOOKS, not just chats" |
+| **€1,499** (+€750) | **AI + Booking + Multi-location** | "Scales across 3+ locations" 💎 |
 
 ### 🧠 The Psychology:
 
 **Starter → Professional:**
-- Customer thinks: "€299 is cheap, but I'll hit 300 conversations in 2 weeks. €449 is only €5/day more and I get 3x capacity. No-brainer."
+- Customer thinks: "€299 is great, but I'm manually replying to 30 WhatsApp messages/day. That's 2 hours wasted. €449 gets AI to handle 80% for just €5/day more. That's cheaper than my hourly rate."
 
 **Professional → Premium:**
-- Customer thinks: "I'm already at €449. For €300 more I get unlimited updates, 3x WhatsApp, and SEO reports to show my boss the ROI. Makes sense."
+- Customer thinks: "AI answers questions, but I still have to book appointments manually. €749 gets AI that CLOSES DEALS while I sleep. For €300 more, that's a no-brainer."
 
 **Premium → Enterprise:**
-- Customer thinks: "€749 works, but we have 3 locations. For 2x the price, we get unlimited everything + Google Ads + dedicated manager. That's cheaper than hiring."
+- Customer thinks: "€749 works great for my main location, but we just opened 2 more. For 2x the price, Enterprise handles all 3 locations + Google Ads. That's cheaper than hiring a receptionist (€2,500+/mo)."
 
 ---
 
@@ -778,24 +794,36 @@ Email to Client + Dashboard Update
 
 ### 🎯 Analytics-Driven Upsells (Automated in n8n)
 
-**Trigger 1: WhatsApp Usage at 80%**
+**Trigger 1: High Manual WhatsApp Activity (Starter → Professional)**
 ```
-If whatsappConversations >= 800 (of 1000 in Professional):
-  Send email: "You're crushing it! Upgrade to Premium for 3,000 conversations"
-```
-
-**Trigger 2: High Lead Volume**
-```
-If leadsThisMonth > 50:
-  Send email: "You're getting 50+ leads/month! Premium tier includes unlimited
-  content updates + priority support"
+If tier === 'Starter' && manualWhatsAppReplies > 20 per day:
+  Send email: "Du verbringst 2-3 Stunden täglich mit WhatsApp-Antworten.
+  Upgrade auf Professional für WhatsApp AI – spart dir 90% der Zeit!
+  Nur €5 mehr pro Tag für automatisierte Antworten rund um die Uhr."
 ```
 
-**Trigger 3: Strong ROI**
+**Trigger 2: Manual Booking Detected (Professional → Premium)**
+```
+If tier === 'Professional' && manualBookingMessages > 10 per week:
+  Send email: "Dein WhatsApp AI beantwortet Fragen super – aber Termine buchst du noch manuell.
+  Premium-Upgrade aktiviert Smart Booking: Kunden buchen direkt im Chat.
+  Spare weitere 5-10 Stunden pro Woche!"
+```
+
+**Trigger 3: Multiple Locations Detected (Premium → Enterprise)**
+```
+If tier === 'Premium' && (multiplePhoneNumbers || multipleAddresses):
+  Send email: "Wir sehen, dass du mehrere Standorte betreibst!
+  Enterprise-Tier unterstützt Multi-Location WhatsApp AI,
+  dedizierte Rufnummern pro Standort, und zentrales Dashboard.
+  Perfekt für 3+ Standorte oder Franchises."
+```
+
+**Trigger 4: Strong ROI (Any tier → Higher tier)**
 ```
 If revenueFromLeads > tierPrice * 10:
-  Send email: "Your website generated 10x ROI this month (€7,490 cost → €74,500 revenue).
-  Want to scale? Enterprise tier includes Google Ads management."
+  Send email: "Deine Website hat diesen Monat 10x ROI generiert (€{tierPrice} Kosten → €{revenue} Umsatz).
+  Bereit zu skalieren? {nextTier} bringt dir: {nextTierFeatures}"
 ```
 
 ---
