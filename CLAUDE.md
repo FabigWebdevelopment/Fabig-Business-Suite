@@ -13,12 +13,15 @@
 **Pricing:** €299-2000+/month per client
 **Goal:** 20-30 clients in Year 1 = €6k-15k MRR
 
-**What Clients Get:**
+**What EVERY Client Gets (Full Package):**
 1. ✅ **Enterprise-grade landing page** (shadcn + premium components)
 2. ✅ **Twenty CRM** (Kanban board, lead management)
-3. ✅ **WhatsApp AI automation** (24/7 customer service)
+3. ✅ **WhatsApp AI automation** (24/7 customer service) - **INCLUDED IN ALL TIERS**
 4. ✅ **Email automation** (react-email templates)
-5. ✅ **Local SEO optimization** (Google My Business, directories, schema markup)
+5. ✅ **SMS notifications** (Twilio)
+6. ✅ **Local SEO optimization** (Google My Business, directories, schema markup)
+
+**USP:** WhatsApp AI is NOT an add-on - it's standard. Every client gets 24/7 AI customer service from day one.
 
 **What Thomas Does:**
 - Builds websites FOR clients (agency model, not self-service)
@@ -40,8 +43,10 @@ Twenty CRM (GraphQL API) - Creates lead
 n8n Webhook Trigger
   ↓
 Email Automation (react-email templates)
-  ↓
-WhatsApp AI Follow-up (if Premium tier)
+  +
+WhatsApp AI Follow-up (ALWAYS - included in all tiers)
+  +
+SMS Notifications (appointment reminders, confirmations)
 ```
 
 **Key Decision:** NO DATABASE
@@ -121,7 +126,47 @@ N8N_WEBHOOK_URL=https://automation.fabig.website/webhook/lead-created
 # Email (Resend)
 RESEND_API_KEY=re_xxx
 FROM_EMAIL=info@client-domain.de
+
+# WhatsApp (Twilio) - INCLUDED IN ALL TIERS
+TWILIO_ACCOUNT_SID=ACxxx
+TWILIO_AUTH_TOKEN=xxx
+TWILIO_WHATSAPP_NUMBER=+14155238886
+
+# OpenAI (for WhatsApp AI)
+OPENAI_API_KEY=sk-proj-xxx
+OPENAI_MODEL=gpt-4o-mini
+
+# SMS (Twilio) - INCLUDED IN ALL TIERS
+TWILIO_SMS_NUMBER=+4930123456789
 ```
+
+---
+
+## 💰 Pricing Tiers (All Include WhatsApp AI!)
+
+| Feature | Starter (€299) | Professional (€499) | Premium (€799) | Enterprise (€2000+) |
+|---------|----------------|---------------------|----------------|---------------------|
+| **Landing Page** | ✅ 5 pages | ✅ 10 pages | ✅ Unlimited | ✅ Unlimited + Custom |
+| **Twenty CRM** | ✅ Unlimited leads | ✅ Unlimited leads | ✅ Unlimited leads | ✅ Unlimited leads |
+| **WhatsApp AI** | ✅ 500 conv/mo | ✅ 1500 conv/mo | ✅ 3000 conv/mo | ✅ Unlimited |
+| **Email Automation** | ✅ Basic (3 sequences) | ✅ Advanced (10 sequences) | ✅ Advanced | ✅ Custom |
+| **SMS Notifications** | ✅ 100/mo | ✅ 300/mo | ✅ 1000/mo | ✅ Unlimited |
+| **Local SEO** | ✅ Basic (5 directories) | ✅ Pro (10+ directories) | ✅ Enterprise (20+ directories) | ✅ Custom + Google Ads |
+| **Updates/Month** | 2 content updates | 5 content updates | Unlimited | Unlimited + Priority |
+| **Support** | Email (48h response) | Email + Chat (24h) | Priority (12h) | Dedicated manager |
+
+**Key Differentiator:** WhatsApp AI automation is included in ALL tiers - not just premium. Every local business gets 24/7 AI customer service.
+
+**Conversation Limits Explained:**
+- 1 conversation = Complete exchange (can be 10+ messages)
+- Average business uses 200-400 conversations/month
+- Overages: €0.50/conversation (still cheaper than hiring staff)
+
+**Add-ons (Optional):**
+- Google Ads Management: +€500/mo (requires €1000+ ad spend)
+- Additional WhatsApp conversations: +€100/1000 conversations
+- Custom integrations (POS, booking systems): Quote-based
+- Industry-specific features (menu management for restaurants, appointment booking for salons): +€150/mo
 
 ---
 
