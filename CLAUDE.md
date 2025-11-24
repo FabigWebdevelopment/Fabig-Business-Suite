@@ -337,6 +337,469 @@ Customer thinks: "Why pay €374 for 600 when I can pay €75 more (€449) and 
 
 ---
 
+## 📊 Analytics & Attribution System (CRITICAL for ROI)
+
+### Why Analytics Matter for Your Business:
+
+**You're charging €299-1499/mo** - Clients NEED to see:
+- "Where are my leads coming from?" (Google My Business vs directories vs organic)
+- "Is WhatsApp AI actually working?" (conversation → booking rate)
+- "What's my ROI?" (€749/mo → €15k in new revenue)
+
+**You need data to trigger upsells:**
+- "You've had 280/300 WhatsApp conversations → upgrade to Professional"
+- "3 leads came from Gelbe Seiten this month → SEO is working"
+
+---
+
+### 🎯 Analytics Stack (GDPR-Compliant)
+
+#### **1. Website Analytics - Pirsch Analytics** (€19/mo per client)
+
+**Why Pirsch:**
+- ✅ Made in Germany (GDPR by default)
+- ✅ No cookie consent needed
+- ✅ Lightweight (doesn't slow down site)
+- ✅ Simple dashboards clients understand
+- ✅ Affordable white-label option
+
+**What We Track:**
+- Page views, unique visitors
+- Traffic sources (Google, directories, direct)
+- Device breakdown (mobile/desktop)
+- Top landing pages
+- Conversion events (form submissions)
+
+**Integration:**
+```typescript
+// src/app/layout.tsx
+import Script from 'next/script'
+
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <head>
+        <Script
+          defer
+          data-domain={process.env.NEXT_PUBLIC_SITE_DOMAIN}
+          src="https://api.pirsch.io/pa.js"
+        />
+      </head>
+      <body>{children}</body>
+    </html>
+  )
+}
+```
+
+**Custom Events:**
+```typescript
+// Track contact form submission
+pirsch('Contact Form Submitted', {
+  meta: {
+    source: 'hero-section',
+    service: 'Elektroinstallation'
+  }
+})
+```
+
+---
+
+#### **2. Product Analytics - PostHog** (Self-hosted on Hetzner)
+
+**Why PostHog:**
+- ✅ Self-host = GDPR compliant + cheaper at scale
+- ✅ Session replays (see exactly how users navigate)
+- ✅ Funnel analysis (landing page → form → CRM → customer)
+- ✅ Feature flags (A/B test landing pages)
+- ✅ Event tracking (every WhatsApp msg, email sent, etc.)
+
+**What We Track:**
+- Complete user journeys (first visit → conversion)
+- Form abandonment (started form but didn't submit)
+- Button clicks, scroll depth
+- Session replays (watch recordings of user sessions)
+- Cohort analysis (users from Google vs directories)
+
+**Deploy on Hetzner:**
+```bash
+# docker-compose.yml for PostHog
+version: '3'
+services:
+  posthog:
+    image: posthog/posthog:latest
+    environment:
+      - SECRET_KEY=${POSTHOG_SECRET}
+      - SITE_URL=https://analytics.fabig-suite.de
+    ports:
+      - "8000:8000"
+```
+
+**Integration:**
+```typescript
+// src/lib/analytics/posthog.ts
+import posthog from 'posthog-js'
+
+posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+  api_host: 'https://analytics.fabig-suite.de',
+  capture_pageview: true,
+  capture_pageleave: true,
+})
+
+// Track custom events
+export function trackEvent(eventName: string, properties?: object) {
+  posthog.capture(eventName, properties)
+}
+
+// Identify user (when they submit form)
+export function identifyUser(leadId: string, properties: object) {
+  posthog.identify(leadId, properties)
+}
+```
+
+**Track Lead Journey:**
+```typescript
+// When form is submitted
+trackEvent('Lead Created', {
+  service: 'Elektroinstallation',
+  source: 'Google Organic',
+  value: 500, // estimated deal value
+})
+
+// When lead enters CRM
+identifyUser(lead.id, {
+  email: lead.email,
+  phone: lead.phone,
+  company: business.name,
+})
+
+// When WhatsApp conversation starts
+trackEvent('WhatsApp Conversation Started', {
+  leadId: lead.id,
+})
+
+// When deal closes
+trackEvent('Deal Won', {
+  leadId: lead.id,
+  value: 2500,
+  source: 'Google My Business',
+})
+```
+
+---
+
+#### **3. CRM Analytics - Twenty CRM Built-in**
+
+Twenty has native analytics for:
+- Lead pipeline (Kanban board stages)
+- Conversion rates (new → contacted → quoted → won)
+- Deal values
+- Time in stage
+
+**Custom Dashboards in Twenty:**
+- Total leads this month
+- Win rate by source (Google vs directories)
+- Average deal size
+- Response time (how fast Thomas/AI responds)
+
+---
+
+#### **4. Attribution Tracking (WHERE did the lead come from?)**
+
+**This is CRITICAL for ROI reporting!**
+
+**Method 1: UTM Parameters**
+```
+Google My Business link:
+https://mueller-elektrik.de?utm_source=gmb&utm_medium=organic
+
+Gelbe Seiten listing:
+https://mueller-elektrik.de?utm_source=gelbe-seiten&utm_medium=directory
+
+Google Ads:
+https://mueller-elektrik.de?utm_source=google&utm_medium=cpc&utm_campaign=elektriker-muenchen
+```
+
+**Method 2: Referrer Detection**
+```typescript
+// src/lib/analytics/attribution.ts
+export function getLeadSource(): string {
+  const urlParams = new URLSearchParams(window.location.search)
+  const utmSource = urlParams.get('utm_source')
+  const referrer = document.referrer
+
+  if (utmSource) return utmSource
+  if (referrer.includes('google.com')) return 'Google Organic'
+  if (referrer.includes('gelbeseiten.de')) return 'Gelbe Seiten'
+  if (referrer.includes('facebook.com')) return 'Facebook'
+  return 'Direct'
+}
+
+// Save to localStorage for form submission
+localStorage.setItem('leadSource', getLeadSource())
+```
+
+**Method 3: First-Touch Attribution**
+```typescript
+// Track first visit source (even if they don't convert immediately)
+const firstTouch = localStorage.getItem('firstTouch')
+if (!firstTouch) {
+  localStorage.setItem('firstTouch', JSON.stringify({
+    source: getLeadSource(),
+    timestamp: Date.now(),
+    landingPage: window.location.pathname,
+  }))
+}
+
+// When form is submitted, include first-touch data
+const attribution = {
+  firstTouch: JSON.parse(localStorage.getItem('firstTouch')),
+  lastTouch: {
+    source: getLeadSource(),
+    timestamp: Date.now(),
+  }
+}
+```
+
+**Store in Twenty CRM:**
+```graphql
+mutation CreateLeadWithAttribution {
+  createPerson(data: {
+    name: { firstName: "Hans", lastName: "Schmidt" }
+    email: "hans@example.com"
+    customFields: {
+      leadSource: "Google My Business"
+      firstTouchDate: "2025-11-24"
+      landingPage: "/elektriker-muenchen"
+      utmCampaign: "local-seo"
+    }
+  }) {
+    id
+  }
+}
+```
+
+---
+
+#### **5. WhatsApp AI Analytics**
+
+**Track conversation quality:**
+```typescript
+// In n8n workflow, after WhatsApp conversation
+const conversationMetrics = {
+  leadId: lead.id,
+  messageCount: 8,
+  duration: 320, // seconds
+  sentiment: 'positive', // from OpenAI analysis
+  intent: 'booking', // detected intent
+  resolved: true, // AI handled it vs escalated to human
+  bookingMade: true,
+}
+
+// Send to PostHog
+posthog.capture('WhatsApp Conversation Completed', conversationMetrics)
+
+// Send to Twenty CRM
+updateLead(lead.id, {
+  whatsappConversations: lead.whatsappConversations + 1,
+  lastWhatsappDate: new Date(),
+  aiResolutionRate: 0.85, // 85% of conversations resolved by AI
+})
+```
+
+**AI Performance Dashboard:**
+- Total conversations / month
+- Resolution rate (AI vs human handoff)
+- Booking conversion rate
+- Average response time
+- Customer satisfaction (ask "War diese Antwort hilfreich? Ja/Nein")
+
+---
+
+#### **6. Local SEO Analytics**
+
+**Google My Business Insights:**
+```typescript
+// Use Google My Business API
+const gmbInsights = await fetchGMBData(business.gmbId)
+
+// Track:
+// - Search impressions (how many saw your listing)
+// - Map views
+// - Direction requests (huge intent signal!)
+// - Phone calls from listing
+// - Website clicks from GMB
+```
+
+**Directory Performance:**
+```typescript
+// Track which directories drive traffic
+const directoryPerformance = {
+  'Gelbe Seiten': { clicks: 45, leads: 3, conversionRate: 0.067 },
+  'Das Örtliche': { clicks: 28, leads: 1, conversionRate: 0.036 },
+  'Google My Business': { clicks: 320, leads: 18, conversionRate: 0.056 },
+  '11880': { clicks: 12, leads: 0, conversionRate: 0 },
+}
+
+// Show client: "Google My Business drove 18 leads this month"
+```
+
+---
+
+### 📈 Client-Facing ROI Dashboard
+
+**Build custom dashboard at `/dashboard` using shadcn/ui:**
+
+```tsx
+// src/app/dashboard/page.tsx
+export default async function ClientDashboard() {
+  const analytics = await getAnalytics(clientId)
+
+  return (
+    <div className="grid grid-cols-3 gap-6">
+      {/* KPI Cards */}
+      <Card>
+        <CardTitle>Leads This Month</CardTitle>
+        <CardValue>{analytics.leads.total}</CardValue>
+        <CardChange>+23% vs last month</CardChange>
+      </Card>
+
+      <Card>
+        <CardTitle>WhatsApp Conversations</CardTitle>
+        <CardValue>{analytics.whatsapp.total}</CardValue>
+        <CardProgress value={analytics.whatsapp.total} max={1000} />
+        <CardSubtext>240/1000 used (Professional tier)</CardSubtext>
+      </Card>
+
+      <Card>
+        <CardTitle>Revenue from Leads</CardTitle>
+        <CardValue>€12,450</CardValue>
+        <CardChange>ROI: 16.6x (€749/mo cost)</CardChange>
+      </Card>
+
+      {/* Lead Sources Chart */}
+      <Chart title="Lead Sources" data={analytics.sources} />
+
+      {/* Conversion Funnel */}
+      <Funnel steps={[
+        { name: 'Website Visitors', count: 1240 },
+        { name: 'Contact Forms', count: 42 },
+        { name: 'WhatsApp Conversations', count: 38 },
+        { name: 'Bookings Made', count: 18 },
+      ]} />
+
+      {/* Upsell Banner (if near limit) */}
+      {analytics.whatsapp.total > 800 && (
+        <Alert variant="warning">
+          You're at 80% of your WhatsApp limit. Upgrade to Premium for 3,000 conversations/mo.
+        </Alert>
+      )}
+    </div>
+  )
+}
+```
+
+**Monthly Email Report (Automated):**
+```
+Subject: 📊 November Analytics - Müller Elektrik
+
+Hallo Thomas,
+
+Hier ist dein monatlicher Performance-Report:
+
+✅ 42 neue Leads (+23% vs Oktober)
+✅ 18 Buchungen (43% Conversion Rate)
+✅ €12,450 Umsatz aus Website-Leads
+
+Top Lead-Quellen:
+1. Google My Business: 18 Leads
+2. Gelbe Seiten: 3 Leads
+3. Google Organic: 8 Leads
+
+WhatsApp AI:
+- 240/1000 Gespräche genutzt (24%)
+- 85% von AI gelöst (ohne dein Eingreifen)
+- ⭐ Durchschnittliche Bewertung: 4.8/5
+
+Nächste Schritte:
+- Du bist auf gutem Weg!
+- Bei diesem Wachstum wirst du in 2 Monaten das WhatsApp-Limit erreichen.
+- Upgrade zu Premium? → 3,000 Gespräche + unbegrenzte Updates
+
+[Dashboard ansehen]
+```
+
+---
+
+### 🔌 Integration Architecture
+
+```
+Website (Next.js)
+  ↓ (Pirsch Analytics - website traffic)
+  ↓ (PostHog - events, session replays)
+  ↓
+Contact Form Submitted
+  ↓ (Attribution data attached)
+  ↓
+Twenty CRM (Lead created with source)
+  ↓
+n8n Webhook
+  ↓
+WhatsApp AI Conversation
+  ↓ (Track: messages, sentiment, resolution)
+  ↓
+Booking Made
+  ↓ (Update Twenty: Deal won, revenue tracked)
+  ↓
+Monthly ROI Report Generated
+  ↓
+Email to Client + Dashboard Update
+```
+
+**All data synced to:**
+- Pirsch (website behavior)
+- PostHog (user journey + events)
+- Twenty CRM (lead pipeline + revenue)
+- Custom Client Dashboard (ROI metrics)
+
+---
+
+### 💰 Cost Breakdown
+
+| Tool | Cost | Purpose |
+|------|------|---------|
+| **Pirsch Analytics** | €19/mo per client | Website analytics (GDPR-compliant) |
+| **PostHog** | €0/mo (self-hosted on Hetzner) | Advanced analytics, session replays |
+| **Twenty CRM** | €0/mo (self-hosted) | Lead management, pipeline |
+| **Custom Dashboard** | €0 (built in Next.js) | Client-facing ROI reports |
+
+**Total per client:** €19/mo (absorbed in €299-1499 pricing)
+
+---
+
+### 🎯 Analytics-Driven Upsells (Automated in n8n)
+
+**Trigger 1: WhatsApp Usage at 80%**
+```
+If whatsappConversations >= 800 (of 1000 in Professional):
+  Send email: "You're crushing it! Upgrade to Premium for 3,000 conversations"
+```
+
+**Trigger 2: High Lead Volume**
+```
+If leadsThisMonth > 50:
+  Send email: "You're getting 50+ leads/month! Premium tier includes unlimited
+  content updates + priority support"
+```
+
+**Trigger 3: Strong ROI**
+```
+If revenueFromLeads > tierPrice * 10:
+  Send email: "Your website generated 10x ROI this month (€7,490 cost → €74,500 revenue).
+  Want to scale? Enterprise tier includes Google Ads management."
+```
+
+---
+
 ## 🎓 Claude Instructions
 
 ### When Building Features
