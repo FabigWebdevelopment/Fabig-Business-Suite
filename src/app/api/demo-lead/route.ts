@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 const TWENTY_API_URL = 'https://api.twenty.com/rest'
-const TWENTY_API_KEY = process.env.TWENTY_API_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0NDIwOWFhZi1hMjE1LTRmNTYtYTA0ZS1hZGJlNGFkYTBkZGIiLCJ0eXBlIjoiQVBJX0tFWSIsIndvcmtzcGFjZUlkIjoiNDQyMDlhYWYtYTIxNS00ZjU2LWEwNGUtYWRiZTRhZGEwZGRiIiwiaWF0IjoxNzY0MDI5ODM5LCJleHAiOjQ5MTc2Mjk4MzksImp0aSI6IjVhODhiMWYxLTRhNWEtNDZkNS04MThlLWE2M2JkZTJlYTRlNyJ9.S48pX_ZIbJFu_EIQmqCVMLYd7oQMFz3FWH3orA_K5FU'
+const TWENTY_API_KEY = process.env.TWENTY_API_KEY || ''
 
 interface DemoLeadRequest {
   businessName: string
