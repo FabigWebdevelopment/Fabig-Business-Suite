@@ -1,0 +1,110 @@
+import type { ThemeConfig } from '../theme.types'
+
+/**
+ * Elegant Purple Theme
+ * Perfect for: Hair salons, Cosmetics, Spa, Fashion, Design studios
+ * Personality: Elegant, luxurious, creative, exclusive
+ *
+ * Generated with tweakcn - oklch color space
+ */
+export const elegantPurpleTheme: ThemeConfig = {
+  name: 'Elegant Purple',
+
+  light: {
+    background: 'oklch(0.9850 0.0100 300)',
+    foreground: 'oklch(0.2200 0.0300 300)',
+    card: 'oklch(1.0000 0 0)',
+    cardForeground: 'oklch(0.2200 0.0300 300)',
+    popover: 'oklch(1.0000 0 0)',
+    popoverForeground: 'oklch(0.2200 0.0300 300)',
+    primary: 'oklch(0.5400 0.2400 295)',
+    primaryForeground: 'oklch(1.0000 0 0)',
+    secondary: 'oklch(0.9400 0.0400 300)',
+    secondaryForeground: 'oklch(0.4500 0.1500 295)',
+    muted: 'oklch(0.9600 0.0150 300)',
+    mutedForeground: 'oklch(0.4800 0.0400 300)',
+    accent: 'oklch(0.9200 0.0600 300)',
+    accentForeground: 'oklch(0.4500 0.1500 295)',
+    destructive: 'oklch(0.5300 0.1900 27)',
+    destructiveForeground: 'oklch(1.0000 0 0)',
+    border: 'oklch(0.9200 0.0250 300)',
+    input: 'oklch(0.9200 0.0250 300)',
+    ring: 'oklch(0.5400 0.2400 295)',
+    chart1: 'oklch(0.6500 0.2000 295)',
+    chart2: 'oklch(0.5400 0.2400 295)',
+    chart3: 'oklch(0.4500 0.2000 295)',
+    chart4: 'oklch(0.6800 0.1500 330)',
+    chart5: 'oklch(0.6000 0.1800 330)',
+    sidebar: 'oklch(0.9600 0.0150 300)',
+    sidebarForeground: 'oklch(0.2200 0.0300 300)',
+    sidebarPrimary: 'oklch(0.5400 0.2400 295)',
+    sidebarPrimaryForeground: 'oklch(1.0000 0 0)',
+    sidebarAccent: 'oklch(0.9200 0.0600 300)',
+    sidebarAccentForeground: 'oklch(0.4500 0.1500 295)',
+    sidebarBorder: 'oklch(0.9200 0.0250 300)',
+    sidebarRing: 'oklch(0.5400 0.2400 295)',
+  },
+
+  dark: {
+    background: 'oklch(0.2000 0.0300 300)',
+    foreground: 'oklch(0.9600 0.0100 300)',
+    card: 'oklch(0.2600 0.0300 300)',
+    cardForeground: 'oklch(0.9600 0.0100 300)',
+    popover: 'oklch(0.2600 0.0300 300)',
+    popoverForeground: 'oklch(0.9600 0.0100 300)',
+    primary: 'oklch(0.6500 0.2000 295)',
+    primaryForeground: 'oklch(0.1800 0.0400 295)',
+    secondary: 'oklch(0.3400 0.0400 300)',
+    secondaryForeground: 'oklch(0.9200 0.0250 300)',
+    muted: 'oklch(0.2800 0.0300 300)',
+    mutedForeground: 'oklch(0.7800 0.0150 300)',
+    accent: 'oklch(0.4000 0.1000 295)',
+    accentForeground: 'oklch(0.9600 0.0100 300)',
+    destructive: 'oklch(0.5800 0.2000 27)',
+    destructiveForeground: 'oklch(0.9600 0.0100 300)',
+    border: 'oklch(0.3600 0.0300 300)',
+    input: 'oklch(0.3600 0.0300 300)',
+    ring: 'oklch(0.6500 0.2000 295)',
+    chart1: 'oklch(0.7200 0.1700 295)',
+    chart2: 'oklch(0.6800 0.1900 295)',
+    chart3: 'oklch(0.6500 0.2000 295)',
+    chart4: 'oklch(0.7500 0.1300 330)',
+    chart5: 'oklch(0.7000 0.1500 330)',
+    sidebar: 'oklch(0.2000 0.0300 300)',
+    sidebarForeground: 'oklch(0.9600 0.0100 300)',
+    sidebarPrimary: 'oklch(0.6500 0.2000 295)',
+    sidebarPrimaryForeground: 'oklch(0.1800 0.0400 295)',
+    sidebarAccent: 'oklch(0.4000 0.1000 295)',
+    sidebarAccentForeground: 'oklch(0.9600 0.0100 300)',
+    sidebarBorder: 'oklch(0.3600 0.0300 300)',
+    sidebarRing: 'oklch(0.6500 0.2000 295)',
+  },
+
+  typography: {
+    fontSans: 'Playfair Display, serif',
+    fontSerif: 'Cormorant Garamond, serif',
+    fontMono: 'Fira Code, monospace',
+  },
+
+  radius: '0.75rem',
+
+  shadow: {
+    x: '0',
+    y: '2px',
+    blur: '8px',
+    spread: '-1px',
+    opacity: '0.12',
+    color: 'oklch(0.3 0.1 300)',
+    '2xs': '0 1px 2px -1px oklch(0.3 0.1 300 / 0.06)',
+    xs: '0 1px 3px -1px oklch(0.3 0.1 300 / 0.06)',
+    sm: '0 2px 4px -1px oklch(0.3 0.1 300 / 0.12)',
+    default: '0 2px 8px -1px oklch(0.3 0.1 300 / 0.12)',
+    md: '0 4px 12px -2px oklch(0.3 0.1 300 / 0.12)',
+    lg: '0 8px 20px -4px oklch(0.3 0.1 300 / 0.12)',
+    xl: '0 16px 32px -8px oklch(0.3 0.1 300 / 0.12)',
+    '2xl': '0 24px 48px -12px oklch(0.3 0.1 300 / 0.25)',
+  },
+
+  trackingNormal: '0.02em',
+  spacing: '0.25rem',
+}

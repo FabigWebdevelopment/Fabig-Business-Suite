@@ -1,0 +1,110 @@
+import type { ThemeConfig } from '../theme.types'
+
+/**
+ * Modern Slate Theme
+ * Perfect for: Architecture, Photography, Agencies, Tech, Startups
+ * Personality: Modern, minimalist, timeless, sophisticated
+ *
+ * Generated with tweakcn - oklch color space
+ */
+export const modernSlateTheme: ThemeConfig = {
+  name: 'Modern Slate',
+
+  light: {
+    background: 'oklch(0.9850 0.0020 260)',
+    foreground: 'oklch(0.2300 0.0150 260)',
+    card: 'oklch(1.0000 0 0)',
+    cardForeground: 'oklch(0.2300 0.0150 260)',
+    popover: 'oklch(1.0000 0 0)',
+    popoverForeground: 'oklch(0.2300 0.0150 260)',
+    primary: 'oklch(0.4500 0.0300 260)',
+    primaryForeground: 'oklch(1.0000 0 0)',
+    secondary: 'oklch(0.9400 0.0080 260)',
+    secondaryForeground: 'oklch(0.3500 0.0200 260)',
+    muted: 'oklch(0.9600 0.0050 260)',
+    mutedForeground: 'oklch(0.5000 0.0150 260)',
+    accent: 'oklch(0.9300 0.0100 260)',
+    accentForeground: 'oklch(0.3500 0.0200 260)',
+    destructive: 'oklch(0.5300 0.1900 27)',
+    destructiveForeground: 'oklch(1.0000 0 0)',
+    border: 'oklch(0.9200 0.0060 260)',
+    input: 'oklch(0.9200 0.0060 260)',
+    ring: 'oklch(0.4500 0.0300 260)',
+    chart1: 'oklch(0.5500 0.0250 260)',
+    chart2: 'oklch(0.4500 0.0300 260)',
+    chart3: 'oklch(0.3500 0.0250 260)',
+    chart4: 'oklch(0.6000 0.0200 200)',
+    chart5: 'oklch(0.5000 0.0250 200)',
+    sidebar: 'oklch(0.9600 0.0050 260)',
+    sidebarForeground: 'oklch(0.2300 0.0150 260)',
+    sidebarPrimary: 'oklch(0.4500 0.0300 260)',
+    sidebarPrimaryForeground: 'oklch(1.0000 0 0)',
+    sidebarAccent: 'oklch(0.9300 0.0100 260)',
+    sidebarAccentForeground: 'oklch(0.3500 0.0200 260)',
+    sidebarBorder: 'oklch(0.9200 0.0060 260)',
+    sidebarRing: 'oklch(0.4500 0.0300 260)',
+  },
+
+  dark: {
+    background: 'oklch(0.1600 0.0100 260)',
+    foreground: 'oklch(0.9600 0.0030 260)',
+    card: 'oklch(0.2000 0.0100 260)',
+    cardForeground: 'oklch(0.9600 0.0030 260)',
+    popover: 'oklch(0.2000 0.0100 260)',
+    popoverForeground: 'oklch(0.9600 0.0030 260)',
+    primary: 'oklch(0.7000 0.0200 260)',
+    primaryForeground: 'oklch(0.1600 0.0100 260)',
+    secondary: 'oklch(0.2800 0.0100 260)',
+    secondaryForeground: 'oklch(0.9000 0.0050 260)',
+    muted: 'oklch(0.2400 0.0100 260)',
+    mutedForeground: 'oklch(0.6500 0.0100 260)',
+    accent: 'oklch(0.3200 0.0150 260)',
+    accentForeground: 'oklch(0.9600 0.0030 260)',
+    destructive: 'oklch(0.5800 0.2000 27)',
+    destructiveForeground: 'oklch(0.9600 0.0030 260)',
+    border: 'oklch(0.3000 0.0100 260)',
+    input: 'oklch(0.3000 0.0100 260)',
+    ring: 'oklch(0.7000 0.0200 260)',
+    chart1: 'oklch(0.7500 0.0180 260)',
+    chart2: 'oklch(0.7000 0.0200 260)',
+    chart3: 'oklch(0.6500 0.0200 260)',
+    chart4: 'oklch(0.7200 0.0150 200)',
+    chart5: 'oklch(0.6800 0.0180 200)',
+    sidebar: 'oklch(0.1600 0.0100 260)',
+    sidebarForeground: 'oklch(0.9600 0.0030 260)',
+    sidebarPrimary: 'oklch(0.7000 0.0200 260)',
+    sidebarPrimaryForeground: 'oklch(0.1600 0.0100 260)',
+    sidebarAccent: 'oklch(0.3200 0.0150 260)',
+    sidebarAccentForeground: 'oklch(0.9600 0.0030 260)',
+    sidebarBorder: 'oklch(0.3000 0.0100 260)',
+    sidebarRing: 'oklch(0.7000 0.0200 260)',
+  },
+
+  typography: {
+    fontSans: 'Space Grotesk, sans-serif',
+    fontSerif: 'DM Serif Display, serif',
+    fontMono: 'Space Mono, monospace',
+  },
+
+  radius: '0.375rem',
+
+  shadow: {
+    x: '0',
+    y: '1px',
+    blur: '2px',
+    spread: '0px',
+    opacity: '0.08',
+    color: 'oklch(0.2 0.01 260)',
+    '2xs': '0 1px 1px 0px oklch(0.2 0.01 260 / 0.04)',
+    xs: '0 1px 2px 0px oklch(0.2 0.01 260 / 0.04)',
+    sm: '0 1px 2px 0px oklch(0.2 0.01 260 / 0.08)',
+    default: '0 1px 2px 0px oklch(0.2 0.01 260 / 0.08)',
+    md: '0 2px 4px -1px oklch(0.2 0.01 260 / 0.08)',
+    lg: '0 4px 8px -2px oklch(0.2 0.01 260 / 0.08)',
+    xl: '0 8px 16px -4px oklch(0.2 0.01 260 / 0.08)',
+    '2xl': '0 16px 32px -8px oklch(0.2 0.01 260 / 0.20)',
+  },
+
+  trackingNormal: '-0.01em',
+  spacing: '0.25rem',
+}

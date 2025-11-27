@@ -1,0 +1,110 @@
+import type { ThemeConfig } from '../theme.types'
+
+/**
+ * Professional Blue Theme
+ * Perfect for: Electricians, Handwerk, Consulting, Tech, IT services
+ * Personality: Professional, trustworthy, competent, serious
+ *
+ * Generated with tweakcn - oklch color space
+ */
+export const professionalBlueTheme: ThemeConfig = {
+  name: 'Professional Blue',
+
+  light: {
+    background: 'oklch(0.9850 0.0050 250)',
+    foreground: 'oklch(0.2100 0.0200 250)',
+    card: 'oklch(1.0000 0 0)',
+    cardForeground: 'oklch(0.2100 0.0200 250)',
+    popover: 'oklch(1.0000 0 0)',
+    popoverForeground: 'oklch(0.2100 0.0200 250)',
+    primary: 'oklch(0.5460 0.2150 264)',
+    primaryForeground: 'oklch(1.0000 0 0)',
+    secondary: 'oklch(0.9320 0.0320 250)',
+    secondaryForeground: 'oklch(0.4200 0.1200 264)',
+    muted: 'oklch(0.9550 0.0100 250)',
+    mutedForeground: 'oklch(0.4500 0.0300 250)',
+    accent: 'oklch(0.9100 0.0500 250)',
+    accentForeground: 'oklch(0.4200 0.1200 264)',
+    destructive: 'oklch(0.5300 0.1900 27)',
+    destructiveForeground: 'oklch(1.0000 0 0)',
+    border: 'oklch(0.9100 0.0200 250)',
+    input: 'oklch(0.9100 0.0200 250)',
+    ring: 'oklch(0.5460 0.2150 264)',
+    chart1: 'oklch(0.6200 0.1800 264)',
+    chart2: 'oklch(0.5460 0.2150 264)',
+    chart3: 'oklch(0.4700 0.1700 264)',
+    chart4: 'oklch(0.6500 0.1400 200)',
+    chart5: 'oklch(0.5800 0.1200 200)',
+    sidebar: 'oklch(0.9550 0.0100 250)',
+    sidebarForeground: 'oklch(0.2100 0.0200 250)',
+    sidebarPrimary: 'oklch(0.5460 0.2150 264)',
+    sidebarPrimaryForeground: 'oklch(1.0000 0 0)',
+    sidebarAccent: 'oklch(0.9100 0.0500 250)',
+    sidebarAccentForeground: 'oklch(0.4200 0.1200 264)',
+    sidebarBorder: 'oklch(0.9100 0.0200 250)',
+    sidebarRing: 'oklch(0.5460 0.2150 264)',
+  },
+
+  dark: {
+    background: 'oklch(0.2000 0.0200 250)',
+    foreground: 'oklch(0.9600 0.0050 250)',
+    card: 'oklch(0.2500 0.0200 250)',
+    cardForeground: 'oklch(0.9600 0.0050 250)',
+    popover: 'oklch(0.2500 0.0200 250)',
+    popoverForeground: 'oklch(0.9600 0.0050 250)',
+    primary: 'oklch(0.6200 0.1800 264)',
+    primaryForeground: 'oklch(0.1500 0.0300 264)',
+    secondary: 'oklch(0.3200 0.0300 250)',
+    secondaryForeground: 'oklch(0.9100 0.0200 250)',
+    muted: 'oklch(0.2800 0.0200 250)',
+    mutedForeground: 'oklch(0.7500 0.0100 250)',
+    accent: 'oklch(0.3800 0.0800 264)',
+    accentForeground: 'oklch(0.9600 0.0050 250)',
+    destructive: 'oklch(0.5800 0.2000 27)',
+    destructiveForeground: 'oklch(0.9600 0.0050 250)',
+    border: 'oklch(0.3500 0.0200 250)',
+    input: 'oklch(0.3500 0.0200 250)',
+    ring: 'oklch(0.6200 0.1800 264)',
+    chart1: 'oklch(0.7000 0.1500 264)',
+    chart2: 'oklch(0.6500 0.1700 264)',
+    chart3: 'oklch(0.6200 0.1800 264)',
+    chart4: 'oklch(0.7200 0.1200 200)',
+    chart5: 'oklch(0.6800 0.1300 200)',
+    sidebar: 'oklch(0.2000 0.0200 250)',
+    sidebarForeground: 'oklch(0.9600 0.0050 250)',
+    sidebarPrimary: 'oklch(0.6200 0.1800 264)',
+    sidebarPrimaryForeground: 'oklch(0.1500 0.0300 264)',
+    sidebarAccent: 'oklch(0.3800 0.0800 264)',
+    sidebarAccentForeground: 'oklch(0.9600 0.0050 250)',
+    sidebarBorder: 'oklch(0.3500 0.0200 250)',
+    sidebarRing: 'oklch(0.6200 0.1800 264)',
+  },
+
+  typography: {
+    fontSans: 'Inter, system-ui, sans-serif',
+    fontSerif: 'Georgia, serif',
+    fontMono: 'JetBrains Mono, monospace',
+  },
+
+  radius: '0.5rem',
+
+  shadow: {
+    x: '0',
+    y: '1px',
+    blur: '3px',
+    spread: '0px',
+    opacity: '0.1',
+    color: 'oklch(0.3 0.05 250)',
+    '2xs': '0 1px 2px 0px oklch(0.3 0.05 250 / 0.05)',
+    xs: '0 1px 2px 0px oklch(0.3 0.05 250 / 0.05)',
+    sm: '0 1px 3px 0px oklch(0.3 0.05 250 / 0.10)',
+    default: '0 1px 3px 0px oklch(0.3 0.05 250 / 0.10)',
+    md: '0 4px 6px -1px oklch(0.3 0.05 250 / 0.10)',
+    lg: '0 10px 15px -3px oklch(0.3 0.05 250 / 0.10)',
+    xl: '0 20px 25px -5px oklch(0.3 0.05 250 / 0.10)',
+    '2xl': '0 25px 50px -12px oklch(0.3 0.05 250 / 0.25)',
+  },
+
+  trackingNormal: '0em',
+  spacing: '0.25rem',
+}

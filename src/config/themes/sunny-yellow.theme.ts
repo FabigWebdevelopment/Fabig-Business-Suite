@@ -1,0 +1,110 @@
+import type { ThemeConfig } from '../theme.types'
+
+/**
+ * Sunny Yellow Theme
+ * Perfect for: Kids, Toys, Events, Leisure, Tourism
+ * Personality: Cheerful, optimistic, friendly, inviting
+ *
+ * Generated with tweakcn - oklch color space
+ */
+export const sunnyYellowTheme: ThemeConfig = {
+  name: 'Sunny Yellow',
+
+  light: {
+    background: 'oklch(0.9900 0.0150 95)',
+    foreground: 'oklch(0.2500 0.0300 95)',
+    card: 'oklch(1.0000 0 0)',
+    cardForeground: 'oklch(0.2500 0.0300 95)',
+    popover: 'oklch(1.0000 0 0)',
+    popoverForeground: 'oklch(0.2500 0.0300 95)',
+    primary: 'oklch(0.6800 0.1600 85)',
+    primaryForeground: 'oklch(0.1800 0.0400 85)',
+    secondary: 'oklch(0.9600 0.0500 95)',
+    secondaryForeground: 'oklch(0.5000 0.1200 85)',
+    muted: 'oklch(0.9650 0.0200 95)',
+    mutedForeground: 'oklch(0.5000 0.0400 95)',
+    accent: 'oklch(0.9400 0.0700 95)',
+    accentForeground: 'oklch(0.5000 0.1200 85)',
+    destructive: 'oklch(0.5300 0.1900 27)',
+    destructiveForeground: 'oklch(1.0000 0 0)',
+    border: 'oklch(0.9300 0.0350 95)',
+    input: 'oklch(0.9300 0.0350 95)',
+    ring: 'oklch(0.6800 0.1600 85)',
+    chart1: 'oklch(0.7600 0.1400 85)',
+    chart2: 'oklch(0.6800 0.1600 85)',
+    chart3: 'oklch(0.6000 0.1400 85)',
+    chart4: 'oklch(0.7500 0.1200 60)',
+    chart5: 'oklch(0.6800 0.1400 60)',
+    sidebar: 'oklch(0.9650 0.0200 95)',
+    sidebarForeground: 'oklch(0.2500 0.0300 95)',
+    sidebarPrimary: 'oklch(0.6800 0.1600 85)',
+    sidebarPrimaryForeground: 'oklch(0.1800 0.0400 85)',
+    sidebarAccent: 'oklch(0.9400 0.0700 95)',
+    sidebarAccentForeground: 'oklch(0.5000 0.1200 85)',
+    sidebarBorder: 'oklch(0.9300 0.0350 95)',
+    sidebarRing: 'oklch(0.6800 0.1600 85)',
+  },
+
+  dark: {
+    background: 'oklch(0.2000 0.0300 95)',
+    foreground: 'oklch(0.9600 0.0100 95)',
+    card: 'oklch(0.2500 0.0300 95)',
+    cardForeground: 'oklch(0.9600 0.0100 95)',
+    popover: 'oklch(0.2500 0.0300 95)',
+    popoverForeground: 'oklch(0.9600 0.0100 95)',
+    primary: 'oklch(0.7600 0.1400 85)',
+    primaryForeground: 'oklch(0.2000 0.0400 85)',
+    secondary: 'oklch(0.3400 0.0400 95)',
+    secondaryForeground: 'oklch(0.9300 0.0250 95)',
+    muted: 'oklch(0.2800 0.0300 95)',
+    mutedForeground: 'oklch(0.7800 0.0150 95)',
+    accent: 'oklch(0.4200 0.0900 85)',
+    accentForeground: 'oklch(0.9600 0.0100 95)',
+    destructive: 'oklch(0.5800 0.2000 27)',
+    destructiveForeground: 'oklch(0.9600 0.0100 95)',
+    border: 'oklch(0.3600 0.0350 95)',
+    input: 'oklch(0.3600 0.0350 95)',
+    ring: 'oklch(0.7600 0.1400 85)',
+    chart1: 'oklch(0.8200 0.1200 85)',
+    chart2: 'oklch(0.7800 0.1300 85)',
+    chart3: 'oklch(0.7600 0.1400 85)',
+    chart4: 'oklch(0.8000 0.1000 60)',
+    chart5: 'oklch(0.7500 0.1100 60)',
+    sidebar: 'oklch(0.2000 0.0300 95)',
+    sidebarForeground: 'oklch(0.9600 0.0100 95)',
+    sidebarPrimary: 'oklch(0.7600 0.1400 85)',
+    sidebarPrimaryForeground: 'oklch(0.2000 0.0400 85)',
+    sidebarAccent: 'oklch(0.4200 0.0900 85)',
+    sidebarAccentForeground: 'oklch(0.9600 0.0100 95)',
+    sidebarBorder: 'oklch(0.3600 0.0350 95)',
+    sidebarRing: 'oklch(0.7600 0.1400 85)',
+  },
+
+  typography: {
+    fontSans: 'Nunito, sans-serif',
+    fontSerif: 'Vollkorn, serif',
+    fontMono: 'Cousine, monospace',
+  },
+
+  radius: '1rem',
+
+  shadow: {
+    x: '0',
+    y: '2px',
+    blur: '8px',
+    spread: '0px',
+    opacity: '0.12',
+    color: 'oklch(0.5 0.1 85)',
+    '2xs': '0 1px 3px 0px oklch(0.5 0.1 85 / 0.06)',
+    xs: '0 1px 4px 0px oklch(0.5 0.1 85 / 0.06)',
+    sm: '0 2px 6px 0px oklch(0.5 0.1 85 / 0.12)',
+    default: '0 2px 8px 0px oklch(0.5 0.1 85 / 0.12)',
+    md: '0 4px 12px -2px oklch(0.5 0.1 85 / 0.12)',
+    lg: '0 8px 20px -4px oklch(0.5 0.1 85 / 0.12)',
+    xl: '0 16px 32px -6px oklch(0.5 0.1 85 / 0.12)',
+    '2xl': '0 24px 48px -8px oklch(0.5 0.1 85 / 0.25)',
+  },
+
+  trackingNormal: '0em',
+  spacing: '0.25rem',
+}

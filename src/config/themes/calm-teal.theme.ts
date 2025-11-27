@@ -1,0 +1,110 @@
+import type { ThemeConfig } from '../theme.types'
+
+/**
+ * Calm Teal Theme
+ * Perfect for: Medical practices, Dentists, Therapy, Care, Pharmacy
+ * Personality: Calming, professional, clean, trustworthy
+ *
+ * Generated with tweakcn - oklch color space
+ */
+export const calmTealTheme: ThemeConfig = {
+  name: 'Calm Teal',
+
+  light: {
+    background: 'oklch(0.9850 0.0080 175)',
+    foreground: 'oklch(0.2200 0.0250 175)',
+    card: 'oklch(1.0000 0 0)',
+    cardForeground: 'oklch(0.2200 0.0250 175)',
+    popover: 'oklch(1.0000 0 0)',
+    popoverForeground: 'oklch(0.2200 0.0250 175)',
+    primary: 'oklch(0.5800 0.1400 175)',
+    primaryForeground: 'oklch(1.0000 0 0)',
+    secondary: 'oklch(0.9500 0.0350 175)',
+    secondaryForeground: 'oklch(0.4500 0.1100 175)',
+    muted: 'oklch(0.9600 0.0120 175)',
+    mutedForeground: 'oklch(0.4800 0.0350 175)',
+    accent: 'oklch(0.9300 0.0500 175)',
+    accentForeground: 'oklch(0.4500 0.1100 175)',
+    destructive: 'oklch(0.5300 0.1900 27)',
+    destructiveForeground: 'oklch(1.0000 0 0)',
+    border: 'oklch(0.9200 0.0200 175)',
+    input: 'oklch(0.9200 0.0200 175)',
+    ring: 'oklch(0.5800 0.1400 175)',
+    chart1: 'oklch(0.6800 0.1200 175)',
+    chart2: 'oklch(0.5800 0.1400 175)',
+    chart3: 'oklch(0.4800 0.1200 175)',
+    chart4: 'oklch(0.7000 0.1000 200)',
+    chart5: 'oklch(0.6200 0.1100 200)',
+    sidebar: 'oklch(0.9600 0.0120 175)',
+    sidebarForeground: 'oklch(0.2200 0.0250 175)',
+    sidebarPrimary: 'oklch(0.5800 0.1400 175)',
+    sidebarPrimaryForeground: 'oklch(1.0000 0 0)',
+    sidebarAccent: 'oklch(0.9300 0.0500 175)',
+    sidebarAccentForeground: 'oklch(0.4500 0.1100 175)',
+    sidebarBorder: 'oklch(0.9200 0.0200 175)',
+    sidebarRing: 'oklch(0.5800 0.1400 175)',
+  },
+
+  dark: {
+    background: 'oklch(0.1800 0.0250 175)',
+    foreground: 'oklch(0.9600 0.0080 175)',
+    card: 'oklch(0.2300 0.0250 175)',
+    cardForeground: 'oklch(0.9600 0.0080 175)',
+    popover: 'oklch(0.2300 0.0250 175)',
+    popoverForeground: 'oklch(0.9600 0.0080 175)',
+    primary: 'oklch(0.6800 0.1200 175)',
+    primaryForeground: 'oklch(0.1500 0.0350 175)',
+    secondary: 'oklch(0.3200 0.0350 175)',
+    secondaryForeground: 'oklch(0.9200 0.0150 175)',
+    muted: 'oklch(0.2600 0.0250 175)',
+    mutedForeground: 'oklch(0.7500 0.0100 175)',
+    accent: 'oklch(0.4000 0.0800 175)',
+    accentForeground: 'oklch(0.9600 0.0080 175)',
+    destructive: 'oklch(0.5800 0.2000 27)',
+    destructiveForeground: 'oklch(0.9600 0.0080 175)',
+    border: 'oklch(0.3400 0.0250 175)',
+    input: 'oklch(0.3400 0.0250 175)',
+    ring: 'oklch(0.6800 0.1200 175)',
+    chart1: 'oklch(0.7500 0.1000 175)',
+    chart2: 'oklch(0.7000 0.1100 175)',
+    chart3: 'oklch(0.6800 0.1200 175)',
+    chart4: 'oklch(0.7500 0.0800 200)',
+    chart5: 'oklch(0.7000 0.0900 200)',
+    sidebar: 'oklch(0.1800 0.0250 175)',
+    sidebarForeground: 'oklch(0.9600 0.0080 175)',
+    sidebarPrimary: 'oklch(0.6800 0.1200 175)',
+    sidebarPrimaryForeground: 'oklch(0.1500 0.0350 175)',
+    sidebarAccent: 'oklch(0.4000 0.0800 175)',
+    sidebarAccentForeground: 'oklch(0.9600 0.0080 175)',
+    sidebarBorder: 'oklch(0.3400 0.0250 175)',
+    sidebarRing: 'oklch(0.6800 0.1200 175)',
+  },
+
+  typography: {
+    fontSans: 'Open Sans, sans-serif',
+    fontSerif: 'Lora, serif',
+    fontMono: 'Ubuntu Mono, monospace',
+  },
+
+  radius: '0.5rem',
+
+  shadow: {
+    x: '0',
+    y: '1px',
+    blur: '4px',
+    spread: '0px',
+    opacity: '0.08',
+    color: 'oklch(0.3 0.05 175)',
+    '2xs': '0 1px 2px 0px oklch(0.3 0.05 175 / 0.04)',
+    xs: '0 1px 2px 0px oklch(0.3 0.05 175 / 0.04)',
+    sm: '0 1px 3px 0px oklch(0.3 0.05 175 / 0.08)',
+    default: '0 1px 4px 0px oklch(0.3 0.05 175 / 0.08)',
+    md: '0 3px 6px -1px oklch(0.3 0.05 175 / 0.08)',
+    lg: '0 6px 12px -2px oklch(0.3 0.05 175 / 0.08)',
+    xl: '0 12px 24px -4px oklch(0.3 0.05 175 / 0.08)',
+    '2xl': '0 20px 40px -8px oklch(0.3 0.05 175 / 0.20)',
+  },
+
+  trackingNormal: '0em',
+  spacing: '0.25rem',
+}

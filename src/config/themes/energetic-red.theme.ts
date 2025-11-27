@@ -1,0 +1,110 @@
+import type { ThemeConfig } from '../theme.types'
+
+/**
+ * Energetic Red Theme
+ * Perfect for: Sports, Fitness, Automotive, Events, Entertainment
+ * Personality: Dynamic, passionate, powerful, bold
+ *
+ * Generated with tweakcn - oklch color space
+ */
+export const energeticRedTheme: ThemeConfig = {
+  name: 'Energetic Red',
+
+  light: {
+    background: 'oklch(0.9850 0.0050 20)',
+    foreground: 'oklch(0.2000 0.0200 20)',
+    card: 'oklch(1.0000 0 0)',
+    cardForeground: 'oklch(0.2000 0.0200 20)',
+    popover: 'oklch(1.0000 0 0)',
+    popoverForeground: 'oklch(0.2000 0.0200 20)',
+    primary: 'oklch(0.5200 0.2200 27)',
+    primaryForeground: 'oklch(1.0000 0 0)',
+    secondary: 'oklch(0.9500 0.0300 20)',
+    secondaryForeground: 'oklch(0.4200 0.1400 27)',
+    muted: 'oklch(0.9600 0.0100 20)',
+    mutedForeground: 'oklch(0.4800 0.0300 20)',
+    accent: 'oklch(0.9300 0.0500 20)',
+    accentForeground: 'oklch(0.4200 0.1400 27)',
+    destructive: 'oklch(0.5200 0.2200 27)',
+    destructiveForeground: 'oklch(1.0000 0 0)',
+    border: 'oklch(0.9200 0.0200 20)',
+    input: 'oklch(0.9200 0.0200 20)',
+    ring: 'oklch(0.5200 0.2200 27)',
+    chart1: 'oklch(0.6200 0.1900 27)',
+    chart2: 'oklch(0.5200 0.2200 27)',
+    chart3: 'oklch(0.4400 0.1800 27)',
+    chart4: 'oklch(0.6500 0.1500 50)',
+    chart5: 'oklch(0.5800 0.1700 50)',
+    sidebar: 'oklch(0.9600 0.0100 20)',
+    sidebarForeground: 'oklch(0.2000 0.0200 20)',
+    sidebarPrimary: 'oklch(0.5200 0.2200 27)',
+    sidebarPrimaryForeground: 'oklch(1.0000 0 0)',
+    sidebarAccent: 'oklch(0.9300 0.0500 20)',
+    sidebarAccentForeground: 'oklch(0.4200 0.1400 27)',
+    sidebarBorder: 'oklch(0.9200 0.0200 20)',
+    sidebarRing: 'oklch(0.5200 0.2200 27)',
+  },
+
+  dark: {
+    background: 'oklch(0.1800 0.0200 20)',
+    foreground: 'oklch(0.9600 0.0050 20)',
+    card: 'oklch(0.2300 0.0200 20)',
+    cardForeground: 'oklch(0.9600 0.0050 20)',
+    popover: 'oklch(0.2300 0.0200 20)',
+    popoverForeground: 'oklch(0.9600 0.0050 20)',
+    primary: 'oklch(0.6200 0.1900 27)',
+    primaryForeground: 'oklch(0.1500 0.0300 27)',
+    secondary: 'oklch(0.3200 0.0300 20)',
+    secondaryForeground: 'oklch(0.9200 0.0200 20)',
+    muted: 'oklch(0.2600 0.0200 20)',
+    mutedForeground: 'oklch(0.7500 0.0100 20)',
+    accent: 'oklch(0.3800 0.0800 27)',
+    accentForeground: 'oklch(0.9600 0.0050 20)',
+    destructive: 'oklch(0.6200 0.1900 27)',
+    destructiveForeground: 'oklch(0.9600 0.0050 20)',
+    border: 'oklch(0.3400 0.0200 20)',
+    input: 'oklch(0.3400 0.0200 20)',
+    ring: 'oklch(0.6200 0.1900 27)',
+    chart1: 'oklch(0.7000 0.1600 27)',
+    chart2: 'oklch(0.6600 0.1800 27)',
+    chart3: 'oklch(0.6200 0.1900 27)',
+    chart4: 'oklch(0.7200 0.1300 50)',
+    chart5: 'oklch(0.6800 0.1500 50)',
+    sidebar: 'oklch(0.1800 0.0200 20)',
+    sidebarForeground: 'oklch(0.9600 0.0050 20)',
+    sidebarPrimary: 'oklch(0.6200 0.1900 27)',
+    sidebarPrimaryForeground: 'oklch(0.1500 0.0300 27)',
+    sidebarAccent: 'oklch(0.3800 0.0800 27)',
+    sidebarAccentForeground: 'oklch(0.9600 0.0050 20)',
+    sidebarBorder: 'oklch(0.3400 0.0200 20)',
+    sidebarRing: 'oklch(0.6200 0.1900 27)',
+  },
+
+  typography: {
+    fontSans: 'Oswald, sans-serif',
+    fontSerif: 'Roboto Slab, serif',
+    fontMono: 'Roboto Mono, monospace',
+  },
+
+  radius: '0.25rem',
+
+  shadow: {
+    x: '0',
+    y: '2px',
+    blur: '6px',
+    spread: '-1px',
+    opacity: '0.15',
+    color: 'oklch(0.3 0.1 27)',
+    '2xs': '0 1px 2px -1px oklch(0.3 0.1 27 / 0.08)',
+    xs: '0 1px 3px -1px oklch(0.3 0.1 27 / 0.08)',
+    sm: '0 2px 4px -1px oklch(0.3 0.1 27 / 0.15)',
+    default: '0 2px 6px -1px oklch(0.3 0.1 27 / 0.15)',
+    md: '0 4px 8px -2px oklch(0.3 0.1 27 / 0.15)',
+    lg: '0 8px 16px -4px oklch(0.3 0.1 27 / 0.15)',
+    xl: '0 16px 24px -6px oklch(0.3 0.1 27 / 0.15)',
+    '2xl': '0 24px 48px -12px oklch(0.3 0.1 27 / 0.30)',
+  },
+
+  trackingNormal: '0.05em',
+  spacing: '0.25rem',
+}
