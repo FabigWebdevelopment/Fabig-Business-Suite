@@ -7,19 +7,7 @@ import { AnimatedDiv } from '@/components/animations/AnimatedDiv'
 import { Loader2, Download, Wand2 } from 'lucide-react'
 
 const industryPrompts = {
-  barber: {
-    name: 'Barbershop Hero',
-    prompt: `Cinematic over-the-shoulder shot of a sharply dressed man (navy blue suit, crisp white shirt) looking at his reflection in a vintage ornate gold-framed mirror. Focus is on his reflection showing a PERFECT fresh fade haircut with styled dark hair, confident subtle smile, strong jawline. Mirror reflection is crystal sharp, foreground slightly soft (shallow depth of field f/1.4).
-
-Environment: Premium barbershop atmosphere visible in the mirror reflection - warm wood paneling, vintage leather barber chair edge, antique brass fixtures, softly glowing Edison bulb lights in background creating warm bokeh. Golden hour twilight lighting streaming from the side, creating warm rim light and subtle lens flare.
-
-Photography style: Anamorphic cinema lens aesthetic (2.39:1 crop feel even in 16:9), shot on ARRI Alexa with Cooke anamorphic lenses, film grain texture, warm color grading with teal shadows and golden highlights. Looks like a frame from a luxury menswear commercial or high-end cologne ad.
-
-Color palette: Rich browns, deep blacks, warm gold/brass accents, subtle teal shadows for contrast. Masculine but refined, premium without being pretentious.
-
-CRITICAL: NO barber visible, NO scissors or combs in shot, NO busy background clutter, NO harsh lighting, NO generic stock photo feel`
-  },
-  electrician: {
+  electricianHero: {
     name: 'Electrician Hero',
     prompt: `Professional close-up shot of experienced hands wearing modern work gloves installing a sleek smart home control panel on a pristine white wall in a luxury German home. The touchscreen panel shows energy monitoring interface, solar panel status graph, EV charging control icons (Tesla-style modern UI). Cables impeccably routed with professional cable management clips, color-coded wiring visible (German standard: brown, black, grey, blue, green-yellow) - all perfectly organized.
 
@@ -30,28 +18,6 @@ Environment: Modern minimalist interior - white walls, soft natural daylight fro
 Photography style: Professional architectural/technical photography, shot on Sony A7R V, 50mm lens at f/2.2 for selective focus, cool professional color grading with technology blue accents and warm copper wire highlights. Editorial lighting with soft shadows, ultra-sharp macro detail on the panel and hands. Magazine-quality composition.
 
 CRITICAL: NO messy wires, NO exposed dangerous conductors, NO dim/harsh lighting, NO cluttered background, NO old technology, NO unsafe practices`
-  },
-  barberLogo: {
-    name: 'Barbershop Logo',
-    prompt: `Design a premium logo for "Schnitt & Stil Barbershop", a high-end German barbershop.
-
-Logo concept: Vintage-meets-modern aesthetic combining classic barbershop heritage with contemporary minimalism. Think: Tom Ford meets traditional German craftsmanship.
-
-Visual elements:
-- Central icon: Stylized razor blade or scissors in elegant geometric form (NOT clipart style)
-- Typography: Bold sans-serif for "SCHNITT", refined serif or elegant sans for "& Stil"
-- Subtle masculine details: Sharp angles, strong lines, geometric precision
-
-Style reference: Luxury fashion brand logos (Dior Homme, Tom Ford), premium barber brands
-
-Color: Black monochrome primary version (must work in pure black).
-
-Technical requirements:
-- Vector-style flat design (NO gradients, NO shadows, NO 3D effects)
-- Must be recognizable at 32x32px (favicon size)
-- Simple enough to emboss on leather or etch on glass
-
-CRITICAL: NO barber poles, NO literal hair illustrations, NO cheesy clipart scissors, NO busy details`
   },
   electricianLogo: {
     name: 'Electrician Logo',
@@ -76,11 +42,40 @@ Technical requirements:
 - Professional enough for VDE certification documents
 
 CRITICAL: NO generic lightning bolt clipart, NO residential house outline (too basic), NO Edison bulb illustrations, NO socket/plug imagery`
+  },
+  smartHome: {
+    name: 'Smart Home',
+    prompt: `Interior photography of a modern German living room with smart home technology seamlessly integrated. Elegant minimalist space with floor-to-ceiling windows showing Munich skyline at golden hour. Warm ambient lighting controlled by invisible automation - subtle LED strips under floating shelves, pendant lights dimmed to perfect level.
+
+Key elements visible:
+- Sleek wall-mounted tablet showing Loxone/KNX interface
+- Motorized blinds partially open at perfect angle
+- Hidden speakers integrated into ceiling
+- Subtle climate sensor on wall
+- Modern leather sofa and designer furniture
+
+Mood: Warm, inviting, luxurious but livable. The technology is present but not dominant - it enhances life without being visible.
+
+Photography style: Architectural interior photography, wide angle lens, professional lighting with warm color temperature. High-end real estate photography aesthetic.
+
+CRITICAL: NO visible wires, NO cluttered tech, NO cold/sterile feeling, NO stock photo generic look`
+  },
+  wallboxInstallation: {
+    name: 'Wallbox Installation',
+    prompt: `Professional installation photo of a premium EV wallbox charger mounted on a clean garage wall. Modern German home garage with concrete floor, white walls. Tesla Model 3 or BMW iX visible partially in frame, charging cable connected.
+
+The wallbox is sleek white design (ABB, Webasto, or similar premium brand aesthetic), LED status ring glowing green. Professional cable routing from ceiling to wallbox, all conduits perfectly aligned and painted to match wall.
+
+Environment: Immaculately clean garage, daylight coming through window, professional tools and equipment case visible in background suggesting just-completed installation.
+
+Photography style: Product photography meets architectural, clean composition, professional lighting highlighting the wallbox as hero element.
+
+CRITICAL: NO messy garage, NO visible old electrical work, NO budget chargers, NO poor cable management`
   }
 }
 
 export default function GenerateImagePage() {
-  const [selectedPrompt, setSelectedPrompt] = useState<keyof typeof industryPrompts>('barber')
+  const [selectedPrompt, setSelectedPrompt] = useState<keyof typeof industryPrompts>('electricianHero')
   const [customPrompt, setCustomPrompt] = useState('')
   const [aspectRatio, setAspectRatio] = useState<'16:9' | '1:1' | '4:3'>('16:9')
   const [imageSize, setImageSize] = useState<'1K' | '2K'>('2K')
@@ -116,8 +111,9 @@ export default function GenerateImagePage() {
       const imageUrl = `data:${data.image.mimeType};base64,${data.image.data}`
       setGeneratedImage(imageUrl)
 
-    } catch (err: any) {
-      setError(err.message)
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred'
+      setError(errorMessage)
     } finally {
       setLoading(false)
     }
@@ -142,7 +138,7 @@ export default function GenerateImagePage() {
           <div className="text-center space-y-4">
             <h1 className="text-4xl font-bold">AI Image Generator</h1>
             <p className="text-muted-foreground text-lg">
-              Generate ultra-high-converting hero images and logos with Gemini 3 Pro
+              Generate professional images for electrician websites with Gemini AI
             </p>
           </div>
         </AnimatedDiv>
@@ -188,7 +184,7 @@ export default function GenerateImagePage() {
                   <label className="block text-sm font-medium mb-2">Aspect Ratio</label>
                   <select
                     value={aspectRatio}
-                    onChange={(e) => setAspectRatio(e.target.value as any)}
+                    onChange={(e) => setAspectRatio(e.target.value as '16:9' | '1:1' | '4:3')}
                     className="w-full p-2 rounded-lg border border-border bg-background"
                   >
                     <option value="16:9">16:9 (Hero)</option>
@@ -201,7 +197,7 @@ export default function GenerateImagePage() {
                   <label className="block text-sm font-medium mb-2">Image Size</label>
                   <select
                     value={imageSize}
-                    onChange={(e) => setImageSize(e.target.value as any)}
+                    onChange={(e) => setImageSize(e.target.value as '1K' | '2K')}
                     className="w-full p-2 rounded-lg border border-border bg-background"
                   >
                     <option value="1K">1K (1024px)</option>

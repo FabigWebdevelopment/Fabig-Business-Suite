@@ -1,0 +1,76 @@
+{
+  "companyName": "Müller Elektrik GmbH",
+  "ownerName": "Thomas Müller",
+  "phone": "+49 89 12345678",
+  "email": "info@mueller-elektrik.de",
+  "website": "mueller-elektrik.de",
+
+  "street": "Musterstraße 123",
+  "zip": "80331",
+  "city": "München",
+  "state": "Bayern",
+
+  "industry": "electrician",
+  "foundedYear": "2015",
+  "employeeCount": "5-10",
+  "services": [
+    "Elektroinstallation",
+    "Smart Home",
+    "E-Mobilität",
+    "Sicherheitstechnik",
+    "Photovoltaik",
+    "24/7 Notdienst"
+  ],
+  "certifications": [
+    "VDE-zertifiziert",
+    "KNX-Partner",
+    "Loxone Silver Partner",
+    "Meisterbetrieb"
+  ],
+  "serviceArea": [
+    "München",
+    "Schwabing",
+    "Bogenhausen",
+    "Maxvorstadt",
+    "Haidhausen"
+  ],
+
+  "tagline": "Ihr zuverlässiger Elektriker in München",
+
+  "selectedTheme": "professional-blue",
+
+  "logoFile": "logo.png",
+
+  "socialMedia": {
+    "instagram": "https://instagram.com/muellerelektrik",
+    "facebook": "https://facebook.com/muellerelektrik",
+    "linkedIn": "",
+    "googleMaps": "https://maps.google.com/?q=Mueller+Elektrik+München"
+  },
+
+  "legalInfo": {
+    "handelsregister": "HRB 123456",
+    "ustId": "DE123456789",
+    "geschaeftsfuehrer": "Thomas Müller"
+  },
+
+  "openingHours": {
+    "monday": "07:00 - 17:00",
+    "tuesday": "07:00 - 17:00",
+    "wednesday": "07:00 - 17:00",
+    "thursday": "07:00 - 17:00",
+    "friday": "07:00 - 15:00",
+    "saturday": "Notdienst",
+    "sunday": "Notdienst"
+  },
+
+  "crm": {
+    "workspaceId": "workspace-mueller-elektrik",
+    "apiKey": "REPLACE_WITH_ACTUAL_API_KEY"
+  },
+
+  "email": {
+    "resendApiKey": "REPLACE_WITH_ACTUAL_RESEND_KEY",
+    "fromDomain": "mueller-elektrik.de"
+  }
+}
