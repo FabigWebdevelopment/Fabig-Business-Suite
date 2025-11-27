@@ -3,8 +3,8 @@ import { FunnelSubmission, FunnelId } from '@/components/funnel/types'
 
 // CRM Integration Configuration
 const CRM_WEBHOOK_URL = process.env.CRM_WEBHOOK_URL
-const TWENTY_CRM_API = process.env.TWENTY_CRM_API_URL
-const TWENTY_CRM_TOKEN = process.env.TWENTY_CRM_API_TOKEN
+const TWENTY_CRM_API = process.env.TWENTY_CRM_API_URL // e.g., https://crm.fabig-suite.de/rest
+const TWENTY_CRM_TOKEN = process.env.TWENTY_API_KEY
 
 interface CRMLeadPayload {
   // Twenty CRM Person fields
@@ -104,7 +104,7 @@ async function sendToTwentyCRM(submission: FunnelSubmission): Promise<boolean> {
   }
 
   try {
-    const response = await fetch(`${TWENTY_CRM_API}/rest/people`, {
+    const response = await fetch(`${TWENTY_CRM_API}/people`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

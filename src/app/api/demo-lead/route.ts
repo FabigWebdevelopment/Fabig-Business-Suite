@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const TWENTY_API_URL = 'https://api.twenty.com/rest'
+const TWENTY_API_URL = process.env.TWENTY_CRM_API_URL || 'https://api.twenty.com/rest'
 const TWENTY_API_KEY = process.env.TWENTY_API_KEY || ''
 
 interface DemoLeadRequest {
