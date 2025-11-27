@@ -1,0 +1,453 @@
+{
+  "generated": "2025-11-27T00:59:30.537Z",
+  "config": {
+    "inputDir": "./public/demo-electrician",
+    "quality": 95,
+    "generateThumbnails": true,
+    "thumbnailSizes": {
+      "sm": 300,
+      "md": 600
+    },
+    "extensions": [
+      ".jpg",
+      ".jpeg",
+      ".png"
+    ]
+  },
+  "images": [
+    {
+      "original": "public/demo-electrician/benefit-overnight.jpg",
+      "webp": "public/demo-electrician/benefit-overnight.webp",
+      "originalSize": 700527,
+      "webpSize": 219946,
+      "savedPercent": 69,
+      "thumbnails": {
+        "sm": "public/demo-electrician/benefit-overnight-thumb-sm.webp",
+        "md": "public/demo-electrician/benefit-overnight-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/benefit-savings.jpg",
+      "webp": "public/demo-electrician/benefit-savings.webp",
+      "originalSize": 709034,
+      "webpSize": 227500,
+      "savedPercent": 68,
+      "thumbnails": {
+        "sm": "public/demo-electrician/benefit-savings-thumb-sm.webp",
+        "md": "public/demo-electrician/benefit-savings-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/benefit-solar.jpg",
+      "webp": "public/demo-electrician/benefit-solar.webp",
+      "originalSize": 919720,
+      "webpSize": 371162,
+      "savedPercent": 60,
+      "thumbnails": {
+        "sm": "public/demo-electrician/benefit-solar-thumb-sm.webp",
+        "md": "public/demo-electrician/benefit-solar-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/benefit-speed.jpg",
+      "webp": "public/demo-electrician/benefit-speed.webp",
+      "originalSize": 610446,
+      "webpSize": 139942,
+      "savedPercent": 77,
+      "thumbnails": {
+        "sm": "public/demo-electrician/benefit-speed-thumb-sm.webp",
+        "md": "public/demo-electrician/benefit-speed-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/echeck-inspection.jpg",
+      "webp": "public/demo-electrician/echeck-inspection.webp",
+      "originalSize": 639405,
+      "webpSize": 186156,
+      "savedPercent": 71,
+      "thumbnails": {
+        "sm": "public/demo-electrician/echeck-inspection-thumb-sm.webp",
+        "md": "public/demo-electrician/echeck-inspection-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/electrician-hero.png",
+      "webp": "public/demo-electrician/electrician-hero.webp",
+      "originalSize": 547217,
+      "webpSize": 170330,
+      "savedPercent": 69,
+      "thumbnails": {
+        "sm": "public/demo-electrician/electrician-hero-thumb-sm.webp",
+        "md": "public/demo-electrician/electrician-hero-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/electrician-logo.png",
+      "webp": "public/demo-electrician/electrician-logo.webp",
+      "originalSize": 312820,
+      "webpSize": 54974,
+      "savedPercent": 82,
+      "thumbnails": {
+        "sm": "public/demo-electrician/electrician-logo-thumb-sm.webp",
+        "md": "public/demo-electrician/electrician-logo-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/ev-charging-service.jpg",
+      "webp": "public/demo-electrician/ev-charging-service.webp",
+      "originalSize": 754033,
+      "webpSize": 286936,
+      "savedPercent": 62,
+      "thumbnails": {
+        "sm": "public/demo-electrician/ev-charging-service-thumb-sm.webp",
+        "md": "public/demo-electrician/ev-charging-service-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/installation-service.jpg",
+      "webp": "public/demo-electrician/installation-service.webp",
+      "originalSize": 706569,
+      "webpSize": 247482,
+      "savedPercent": 65,
+      "thumbnails": {
+        "sm": "public/demo-electrician/installation-service-thumb-sm.webp",
+        "md": "public/demo-electrician/installation-service-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/knx-service.jpg",
+      "webp": "public/demo-electrician/knx-service.webp",
+      "originalSize": 795386,
+      "webpSize": 288720,
+      "savedPercent": 64,
+      "thumbnails": {
+        "sm": "public/demo-electrician/knx-service-thumb-sm.webp",
+        "md": "public/demo-electrician/knx-service-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/lighting-service.jpg",
+      "webp": "public/demo-electrician/lighting-service.webp",
+      "originalSize": 679989,
+      "webpSize": 188952,
+      "savedPercent": 72,
+      "thumbnails": {
+        "sm": "public/demo-electrician/lighting-service-thumb-sm.webp",
+        "md": "public/demo-electrician/lighting-service-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/loxone-service.jpg",
+      "webp": "public/demo-electrician/loxone-service.webp",
+      "originalSize": 765635,
+      "webpSize": 263424,
+      "savedPercent": 66,
+      "thumbnails": {
+        "sm": "public/demo-electrician/loxone-service-thumb-sm.webp",
+        "md": "public/demo-electrician/loxone-service-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/photovoltaik-service.jpg",
+      "webp": "public/demo-electrician/photovoltaik-service.webp",
+      "originalSize": 851581,
+      "webpSize": 337910,
+      "savedPercent": 60,
+      "thumbnails": {
+        "sm": "public/demo-electrician/photovoltaik-service-thumb-sm.webp",
+        "md": "public/demo-electrician/photovoltaik-service-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/process-step-1-beratung.jpg",
+      "webp": "public/demo-electrician/process-step-1-beratung.webp",
+      "originalSize": 609740,
+      "webpSize": 173120,
+      "savedPercent": 72,
+      "thumbnails": {
+        "sm": "public/demo-electrician/process-step-1-beratung-thumb-sm.webp",
+        "md": "public/demo-electrician/process-step-1-beratung-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/process-step-2-planung.jpg",
+      "webp": "public/demo-electrician/process-step-2-planung.webp",
+      "originalSize": 844124,
+      "webpSize": 319632,
+      "savedPercent": 62,
+      "thumbnails": {
+        "sm": "public/demo-electrician/process-step-2-planung-thumb-sm.webp",
+        "md": "public/demo-electrician/process-step-2-planung-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/process-step-3-installation.jpg",
+      "webp": "public/demo-electrician/process-step-3-installation.webp",
+      "originalSize": 726009,
+      "webpSize": 253330,
+      "savedPercent": 65,
+      "thumbnails": {
+        "sm": "public/demo-electrician/process-step-3-installation-thumb-sm.webp",
+        "md": "public/demo-electrician/process-step-3-installation-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/process-step-4-uebergabe.jpg",
+      "webp": "public/demo-electrician/process-step-4-uebergabe.webp",
+      "originalSize": 803445,
+      "webpSize": 319854,
+      "savedPercent": 60,
+      "thumbnails": {
+        "sm": "public/demo-electrician/process-step-4-uebergabe-thumb-sm.webp",
+        "md": "public/demo-electrician/process-step-4-uebergabe-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/security-alarm-panel.jpg",
+      "webp": "public/demo-electrician/security-alarm-panel.webp",
+      "originalSize": 558596,
+      "webpSize": 109618,
+      "savedPercent": 80,
+      "thumbnails": {
+        "sm": "public/demo-electrician/security-alarm-panel-thumb-sm.webp",
+        "md": "public/demo-electrician/security-alarm-panel-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/security-camera-dome.jpg",
+      "webp": "public/demo-electrician/security-camera-dome.webp",
+      "originalSize": 755653,
+      "webpSize": 280638,
+      "savedPercent": 63,
+      "thumbnails": {
+        "sm": "public/demo-electrician/security-camera-dome-thumb-sm.webp",
+        "md": "public/demo-electrician/security-camera-dome-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/security-fingerprint-lock.jpg",
+      "webp": "public/demo-electrician/security-fingerprint-lock.webp",
+      "originalSize": 544135,
+      "webpSize": 91630,
+      "savedPercent": 83,
+      "thumbnails": {
+        "sm": "public/demo-electrician/security-fingerprint-lock-thumb-sm.webp",
+        "md": "public/demo-electrician/security-fingerprint-lock-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/security-service.jpg",
+      "webp": "public/demo-electrician/security-service.webp",
+      "originalSize": 553409,
+      "webpSize": 89552,
+      "savedPercent": 84,
+      "thumbnails": {
+        "sm": "public/demo-electrician/security-service-thumb-sm.webp",
+        "md": "public/demo-electrician/security-service-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/security-smoke-detector.jpg",
+      "webp": "public/demo-electrician/security-smoke-detector.webp",
+      "originalSize": 537794,
+      "webpSize": 78736,
+      "savedPercent": 85,
+      "thumbnails": {
+        "sm": "public/demo-electrician/security-smoke-detector-thumb-sm.webp",
+        "md": "public/demo-electrician/security-smoke-detector-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/service-area-muenchen.jpg",
+      "webp": "public/demo-electrician/service-area-muenchen.webp",
+      "originalSize": 935275,
+      "webpSize": 371702,
+      "savedPercent": 60,
+      "thumbnails": {
+        "sm": "public/demo-electrician/service-area-muenchen-thumb-sm.webp",
+        "md": "public/demo-electrician/service-area-muenchen-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/smart-home-blinds-auto.jpg",
+      "webp": "public/demo-electrician/smart-home-blinds-auto.webp",
+      "originalSize": 868080,
+      "webpSize": 335814,
+      "savedPercent": 61,
+      "thumbnails": {
+        "sm": "public/demo-electrician/smart-home-blinds-auto-thumb-sm.webp",
+        "md": "public/demo-electrician/smart-home-blinds-auto-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/smart-home-lighting-scene.jpg",
+      "webp": "public/demo-electrician/smart-home-lighting-scene.webp",
+      "originalSize": 677413,
+      "webpSize": 184292,
+      "savedPercent": 73,
+      "thumbnails": {
+        "sm": "public/demo-electrician/smart-home-lighting-scene-thumb-sm.webp",
+        "md": "public/demo-electrician/smart-home-lighting-scene-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/smart-home-morning-scene.jpg",
+      "webp": "public/demo-electrician/smart-home-morning-scene.webp",
+      "originalSize": 708070,
+      "webpSize": 230228,
+      "savedPercent": 67,
+      "thumbnails": {
+        "sm": "public/demo-electrician/smart-home-morning-scene-thumb-sm.webp",
+        "md": "public/demo-electrician/smart-home-morning-scene-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/smart-home-service.jpg",
+      "webp": "public/demo-electrician/smart-home-service.webp",
+      "originalSize": 616764,
+      "webpSize": 212986,
+      "savedPercent": 65,
+      "thumbnails": {
+        "sm": "public/demo-electrician/smart-home-service-thumb-sm.webp",
+        "md": "public/demo-electrician/smart-home-service-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/smart-home-tablet-control.jpg",
+      "webp": "public/demo-electrician/smart-home-tablet-control.webp",
+      "originalSize": 695605,
+      "webpSize": 219298,
+      "savedPercent": 68,
+      "thumbnails": {
+        "sm": "public/demo-electrician/smart-home-tablet-control-thumb-sm.webp",
+        "md": "public/demo-electrician/smart-home-tablet-control-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/smart-home-voice-control.jpg",
+      "webp": "public/demo-electrician/smart-home-voice-control.webp",
+      "originalSize": 666538,
+      "webpSize": 194086,
+      "savedPercent": 71,
+      "thumbnails": {
+        "sm": "public/demo-electrician/smart-home-voice-control-thumb-sm.webp",
+        "md": "public/demo-electrician/smart-home-voice-control-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/smart-home-wall-panel.jpg",
+      "webp": "public/demo-electrician/smart-home-wall-panel.webp",
+      "originalSize": 576820,
+      "webpSize": 133224,
+      "savedPercent": 77,
+      "thumbnails": {
+        "sm": "public/demo-electrician/smart-home-wall-panel-thumb-sm.webp",
+        "md": "public/demo-electrician/smart-home-wall-panel-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/team-service.jpg",
+      "webp": "public/demo-electrician/team-service.webp",
+      "originalSize": 914474,
+      "webpSize": 371812,
+      "savedPercent": 59,
+      "thumbnails": {
+        "sm": "public/demo-electrician/team-service-thumb-sm.webp",
+        "md": "public/demo-electrician/team-service-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/thomas-mueller-at-work.jpg",
+      "webp": "public/demo-electrician/thomas-mueller-at-work.webp",
+      "originalSize": 670327,
+      "webpSize": 260100,
+      "savedPercent": 61,
+      "thumbnails": {
+        "sm": "public/demo-electrician/thomas-mueller-at-work-thumb-sm.webp",
+        "md": "public/demo-electrician/thomas-mueller-at-work-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/thomas-mueller-consulting.jpg",
+      "webp": "public/demo-electrician/thomas-mueller-consulting.webp",
+      "originalSize": 531003,
+      "webpSize": 153802,
+      "savedPercent": 71,
+      "thumbnails": {
+        "sm": "public/demo-electrician/thomas-mueller-consulting-thumb-sm.webp",
+        "md": "public/demo-electrician/thomas-mueller-consulting-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/thomas-mueller-portrait.jpg",
+      "webp": "public/demo-electrician/thomas-mueller-portrait.webp",
+      "originalSize": 537414,
+      "webpSize": 134760,
+      "savedPercent": 75,
+      "thumbnails": {
+        "sm": "public/demo-electrician/thomas-mueller-portrait-thumb-sm.webp",
+        "md": "public/demo-electrician/thomas-mueller-portrait-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/wallbox-cost-savings.jpg",
+      "webp": "public/demo-electrician/wallbox-cost-savings.webp",
+      "originalSize": 785698,
+      "webpSize": 289058,
+      "savedPercent": 63,
+      "thumbnails": {
+        "sm": "public/demo-electrician/wallbox-cost-savings-thumb-sm.webp",
+        "md": "public/demo-electrician/wallbox-cost-savings-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/wallbox-overnight-charging.jpg",
+      "webp": "public/demo-electrician/wallbox-overnight-charging.webp",
+      "originalSize": 783917,
+      "webpSize": 296182,
+      "savedPercent": 62,
+      "thumbnails": {
+        "sm": "public/demo-electrician/wallbox-overnight-charging-thumb-sm.webp",
+        "md": "public/demo-electrician/wallbox-overnight-charging-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/wallbox-packages-visual.jpg",
+      "webp": "public/demo-electrician/wallbox-packages-visual.webp",
+      "originalSize": 494073,
+      "webpSize": 81484,
+      "savedPercent": 84,
+      "thumbnails": {
+        "sm": "public/demo-electrician/wallbox-packages-visual-thumb-sm.webp",
+        "md": "public/demo-electrician/wallbox-packages-visual-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/wallbox-solar-integration.jpg",
+      "webp": "public/demo-electrician/wallbox-solar-integration.webp",
+      "originalSize": 832421,
+      "webpSize": 310818,
+      "savedPercent": 63,
+      "thumbnails": {
+        "sm": "public/demo-electrician/wallbox-solar-integration-thumb-sm.webp",
+        "md": "public/demo-electrician/wallbox-solar-integration-thumb-md.webp"
+      }
+    },
+    {
+      "original": "public/demo-electrician/wallbox-speed-comparison.jpg",
+      "webp": "public/demo-electrician/wallbox-speed-comparison.webp",
+      "originalSize": 377801,
+      "webpSize": 52342,
+      "savedPercent": 86,
+      "thumbnails": {
+        "sm": "public/demo-electrician/wallbox-speed-comparison-thumb-sm.webp",
+        "md": "public/demo-electrician/wallbox-speed-comparison-thumb-md.webp"
+      }
+    }
+  ],
+  "stats": {
+    "totalOriginalSize": 26596960,
+    "totalOptimizedSize": 8531532,
+    "savingsPercent": 68
+  }
+}
